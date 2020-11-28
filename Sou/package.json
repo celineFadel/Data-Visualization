@@ -1,0 +1,17 @@
+{
+  "name": "90cae0183f551bf5",
+  "main": "90cae0183f551bf5@94.js",
+  "version": "94.0.0",
+  "homepage": "https://observablehq.com/d/90cae0183f551bf5",
+  "author": {
+    "name": "celine fadel",
+    "url": "https://observablehq.com/@celinefadel"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  },
+  "dependencies": {
+    "@observablehq/runtime": "^4.8.0"
+  }
+}
