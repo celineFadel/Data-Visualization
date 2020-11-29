@@ -1,0 +1,122 @@
+:root {
+    --main-border-color: #E6EAEA;
+    --main-light-blue-color: lightskyblue;
+    --main-blue:#0096C7;
+}
+body, html{
+  padding: 0;
+  margin: 0;
+  background-color: whitesmoke;
+  font-family: 'Archivo Narrow', sans-serif;
+  overflow-x: hidden;
+}
+body{
+  overflow: hidden;
+}
+*{
+  max-width: 100vw;
+}
+.font-fancy{
+  font-family: 'Kalam', cursive;
+}
+.font-1{
+  font-family: 'Archivo Narrow', sans-serif;
+}
+.in-text-link{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline;
+}
+.main-navbar{
+min-height: 40px; 
+border-bottom: 1px solid #e0e0e0;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 10px 5vw;
+align-items: center;
+}
+.main-navbar .nav-text{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.nav-options{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.nav-options .one-option{
+  margin: 0 10px;
+}
+.nav-options .nav-link{
+  color: black;
+  text-decoration: none;
+
+}
+.one-option.selected{
+  font-weight: bold;
+}
+.one-option:hover{
+  cursor: pointer;
+}
+.one-option:hover{
+  font-weight: bold;
+}
+.one-option:hover .small-square{
+  transition: all 0.3s linear;
+  background-color: var(--main-blue);
+  
+}
+.main-navbar .nav-text .blue-text{
+  color: var(--main-blue);
+}
+.small-square{
+  height: 7px;
+  width:7px;
+  background-color: transparent;
+  transition: all 0.3s linear;
+}
+.one-option.selected .small-square{
+  height: 7px;
+  width:7px;
+  background-color: #ADE8F4;
+}
+
+/* section and title */
+.section{
+  margin: 20px 0;
+}
+.middle-title{
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  border-top: 3px solid var(--main-blue);
+  border-bottom: 3px solid var(--main-blue);
+  width: fit-content;
+  margin: auto;
+}
+.bisection{
+  margin: 20px 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.2rem;
+  gap:20px;
+  justify-content: space-evenly;
+
+}
+
+/* footer */
+.main-footer{
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  bottom: 0;
+}

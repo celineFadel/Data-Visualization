@@ -1,0 +1,31 @@
+.lebanon-map{
+    width: 100%;
+    position: relative;
+    padding: 5vw 0;
+}
+.lebanon-map .lebanon-map-text{
+    width: 50%;
+    position: absolute;
+    bottom: 15%;
+    left: 5vw;
+    font-size: 4.5rem;
+}
+.lebanon-map .lebanon-map-text .small-text-lebanon{
+    font-size: 1.2rem;
+}
+.lebanon-map .image-lebanon{
+    height: 100%;
+    text-align: right;
+    padding-right: 10%;
+    max-height: 70vh;
+}
+.lebanon-map .image-lebanon img{
+    height: 100%;
+}
+#remove_here .observablehq--cellname{
+    display: none;
+}
+.big-section{
+    margin: 20px 5vw;
+    font-size: 1.2rem;
+}
