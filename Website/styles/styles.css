@@ -2,6 +2,7 @@
     --main-border-color: #E6EAEA;
     --main-light-blue-color: lightskyblue;
     --main-blue:#0096C7;
+    --main-green:#38b000;
 }
 body, html{
   padding: 0;
@@ -64,9 +65,14 @@ align-items: center;
 .one-option:hover{
   font-weight: bold;
 }
-.one-option:hover .small-square{
+.one-option:hover .small-square.blue{
   transition: all 0.3s linear;
   background-color: var(--main-blue);
+  
+}
+.one-option:hover .small-square.green{
+  transition: all 0.3s linear;
+  background-color: var(--main-grre);
   
 }
 .main-navbar .nav-text .blue-text{

@@ -29,3 +29,8 @@
     margin: 20px 5vw;
     font-size: 1.2rem;
 }
+.bubbles .observablehq{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
