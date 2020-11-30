@@ -1,0 +1,4103 @@
+[
+    {
+      "Country": "Argentina",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 19,
+      "Date": 2016
+    },
+    {
+      "Country": "Australia",
+      "Amount": 529,
+      "Date": 2016
+    },
+    {
+      "Country": "Austria",
+      "Amount": 76,
+      "Date": 2016
+    },
+    {
+      "Country": "Belarus",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 99,
+      "Date": 2016
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 399,
+      "Date": 2016
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 25,
+      "Date": 2016
+    },
+    {
+      "Country": "Canada",
+      "Amount": 741,
+      "Date": 2016
+    },
+    {
+      "Country": "Cura√ßao",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 45,
+      "Date": 2016
+    },
+    {
+      "Country": "Czechia",
+      "Amount": 4,
+      "Date": 2016
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 25,
+      "Date": 2016
+    },
+    {
+      "Country": "Finland",
+      "Amount": 19,
+      "Date": 2016
+    },
+    {
+      "Country": "France",
+      "Amount": 134,
+      "Date": 2016
+    },
+    {
+      "Country": "Georgia",
+      "Amount": 6,
+      "Date": 2016
+    },
+    {
+      "Country": "Germany",
+      "Amount": 804,
+      "Date": 2016
+    },
+    {
+      "Country": "Ghana",
+      "Amount": 7,
+      "Date": 2016
+    },
+    {
+      "Country": "Greece",
+      "Amount": 16,
+      "Date": 2016
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 7,
+      "Date": 2016
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 13,
+      "Date": 2016
+    },
+    {
+      "Country": "Israel",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Italy",
+      "Amount": 349,
+      "Date": 2016
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 3,
+      "Date": 2016
+    },
+    {
+      "Country": "Kuwait",
+      "Amount": 5,
+      "Date": 2016
+    },
+    {
+      "Country": "Luxembourg",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 5,
+      "Date": 2016
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Mauritania",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Nauru",
+      "Amount": 10,
+      "Date": 2016
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 32,
+      "Date": 2016
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Nigeria",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Norway",
+      "Amount": 40,
+      "Date": 2016
+    },
+    {
+      "Country": "Peru",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Poland",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Romania",
+      "Amount": 5,
+      "Date": 2016
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 7,
+      "Date": 2016
+    },
+    {
+      "Country": "Serbia",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "South Africa",
+      "Amount": 2,
+      "Date": 2016
+    },
+    {
+      "Country": "Spain",
+      "Amount": 10,
+      "Date": 2016
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 638,
+      "Date": 2016
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 44,
+      "Date": 2016
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 27,
+      "Date": 2016
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 13,
+      "Date": 2016
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 9,
+      "Date": 2016
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 129,
+      "Date": 2016
+    },
+    {
+      "Country": "United States",
+      "Amount": 404,
+      "Date": 2016
+    },
+    {
+      "Country": "Venezuela",
+      "Amount": 12,
+      "Date": 2016
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 6,
+      "Date": 2016
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2016
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 19,
+      "Date": 2015
+    },
+    {
+      "Country": "Australia",
+      "Amount": 485,
+      "Date": 2015
+    },
+    {
+      "Country": "Austria",
+      "Amount": 63,
+      "Date": 2015
+    },
+    {
+      "Country": "Belarus",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 109,
+      "Date": 2015
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 399,
+      "Date": 2015
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 18,
+      "Date": 2015
+    },
+    {
+      "Country": "Canada",
+      "Amount": 867,
+      "Date": 2015
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Cura√ßao",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 39,
+      "Date": 2015
+    },
+    {
+      "Country": "Czechia",
+      "Amount": 4,
+      "Date": 2015
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 24,
+      "Date": 2015
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 6,
+      "Date": 2015
+    },
+    {
+      "Country": "Finland",
+      "Amount": 11,
+      "Date": 2015
+    },
+    {
+      "Country": "France",
+      "Amount": 117,
+      "Date": 2015
+    },
+    {
+      "Country": "Georgia",
+      "Amount": 6,
+      "Date": 2015
+    },
+    {
+      "Country": "Germany",
+      "Amount": 521,
+      "Date": 2015
+    },
+    {
+      "Country": "Ghana",
+      "Amount": 7,
+      "Date": 2015
+    },
+    {
+      "Country": "Greece",
+      "Amount": 9,
+      "Date": 2015
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 13,
+      "Date": 2015
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 13,
+      "Date": 2015
+    },
+    {
+      "Country": "Israel",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "Italy",
+      "Amount": 348,
+      "Date": 2015
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 3,
+      "Date": 2015
+    },
+    {
+      "Country": "Kuwait",
+      "Amount": 5,
+      "Date": 2015
+    },
+    {
+      "Country": "Luxembourg",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 5,
+      "Date": 2015
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Nauru",
+      "Amount": 10,
+      "Date": 2015
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 37,
+      "Date": 2015
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "Norway",
+      "Amount": 30,
+      "Date": 2015
+    },
+    {
+      "Country": "Peru",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Poland",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "Qatar",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Romania",
+      "Amount": 4,
+      "Date": 2015
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 8,
+      "Date": 2015
+    },
+    {
+      "Country": "Serbia",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "South Africa",
+      "Amount": 3,
+      "Date": 2015
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 2015
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 532,
+      "Date": 2015
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 44,
+      "Date": 2015
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 26,
+      "Date": 2015
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 7,
+      "Date": 2015
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 7,
+      "Date": 2015
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 129,
+      "Date": 2015
+    },
+    {
+      "Country": "United States",
+      "Amount": 413,
+      "Date": 2015
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 6,
+      "Date": 2015
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2015
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 18,
+      "Date": 2014
+    },
+    {
+      "Country": "Australia",
+      "Amount": 393,
+      "Date": 2014
+    },
+    {
+      "Country": "Austria",
+      "Amount": 52,
+      "Date": 2014
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 77,
+      "Date": 2014
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 394,
+      "Date": 2014
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 17,
+      "Date": 2014
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1024,
+      "Date": 2014
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 36,
+      "Date": 2014
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 25,
+      "Date": 2014
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 6,
+      "Date": 2014
+    },
+    {
+      "Country": "Finland",
+      "Amount": 12,
+      "Date": 2014
+    },
+    {
+      "Country": "France",
+      "Amount": 108,
+      "Date": 2014
+    },
+    {
+      "Country": "Georgia",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Germany",
+      "Amount": 489,
+      "Date": 2014
+    },
+    {
+      "Country": "Ghana",
+      "Amount": 7,
+      "Date": 2014
+    },
+    {
+      "Country": "Greece",
+      "Amount": 9,
+      "Date": 2014
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 13,
+      "Date": 2014
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 13,
+      "Date": 2014
+    },
+    {
+      "Country": "Israel",
+      "Amount": 2,
+      "Date": 2014
+    },
+    {
+      "Country": "Italy",
+      "Amount": 310,
+      "Date": 2014
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 2,
+      "Date": 2014
+    },
+    {
+      "Country": "Kuwait",
+      "Amount": 5,
+      "Date": 2014
+    },
+    {
+      "Country": "Luxembourg",
+      "Amount": 2,
+      "Date": 2014
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 3,
+      "Date": 2014
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Nauru",
+      "Amount": 10,
+      "Date": 2014
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 37,
+      "Date": 2014
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 5,
+      "Date": 2014
+    },
+    {
+      "Country": "Norway",
+      "Amount": 38,
+      "Date": 2014
+    },
+    {
+      "Country": "Peru",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Poland",
+      "Amount": 2,
+      "Date": 2014
+    },
+    {
+      "Country": "Romania",
+      "Amount": 3,
+      "Date": 2014
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 8,
+      "Date": 2014
+    },
+    {
+      "Country": "South Africa",
+      "Amount": 3,
+      "Date": 2014
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 2014
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 511,
+      "Date": 2014
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 41,
+      "Date": 2014
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 22,
+      "Date": 2014
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 7,
+      "Date": 2014
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 6,
+      "Date": 2014
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 114,
+      "Date": 2014
+    },
+    {
+      "Country": "United States",
+      "Amount": 434,
+      "Date": 2014
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 6,
+      "Date": 2014
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2014
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 17,
+      "Date": 2013
+    },
+    {
+      "Country": "Australia",
+      "Amount": 346,
+      "Date": 2013
+    },
+    {
+      "Country": "Austria",
+      "Amount": 50,
+      "Date": 2013
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 66,
+      "Date": 2013
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 34,
+      "Date": 2013
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 12,
+      "Date": 2013
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1103,
+      "Date": 2013
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 32,
+      "Date": 2013
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 35,
+      "Date": 2013
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 5,
+      "Date": 2013
+    },
+    {
+      "Country": "Finland",
+      "Amount": 12,
+      "Date": 2013
+    },
+    {
+      "Country": "France",
+      "Amount": 105,
+      "Date": 2013
+    },
+    {
+      "Country": "Germany",
+      "Amount": 449,
+      "Date": 2013
+    },
+    {
+      "Country": "Ghana",
+      "Amount": 7,
+      "Date": 2013
+    },
+    {
+      "Country": "Greece",
+      "Amount": 5,
+      "Date": 2013
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 11,
+      "Date": 2013
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 15,
+      "Date": 2013
+    },
+    {
+      "Country": "Israel",
+      "Amount": 2,
+      "Date": 2013
+    },
+    {
+      "Country": "Italy",
+      "Amount": 279,
+      "Date": 2013
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Kuwait",
+      "Amount": 5,
+      "Date": 2013
+    },
+    {
+      "Country": "Luxembourg",
+      "Amount": 2,
+      "Date": 2013
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 41,
+      "Date": 2013
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 5,
+      "Date": 2013
+    },
+    {
+      "Country": "Norway",
+      "Amount": 44,
+      "Date": 2013
+    },
+    {
+      "Country": "Peru",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 2,
+      "Date": 2013
+    },
+    {
+      "Country": "Poland",
+      "Amount": 3,
+      "Date": 2013
+    },
+    {
+      "Country": "Romania",
+      "Amount": 5,
+      "Date": 2013
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 7,
+      "Date": 2013
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 453,
+      "Date": 2013
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 35,
+      "Date": 2013
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 25,
+      "Date": 2013
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 4,
+      "Date": 2013
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 6,
+      "Date": 2013
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 102,
+      "Date": 2013
+    },
+    {
+      "Country": "United States",
+      "Amount": 482,
+      "Date": 2013
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 6,
+      "Date": 2013
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2013
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2012
+    },
+    {
+      "Country": "Australia",
+      "Amount": 315,
+      "Date": 2012
+    },
+    {
+      "Country": "Austria",
+      "Amount": 46,
+      "Date": 2012
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 87,
+      "Date": 2012
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 29,
+      "Date": 2012
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 7,
+      "Date": 2012
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1104,
+      "Date": 2012
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2012
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 32,
+      "Date": 2012
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 56,
+      "Date": 2012
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 6,
+      "Date": 2012
+    },
+    {
+      "Country": "Finland",
+      "Amount": 11,
+      "Date": 2012
+    },
+    {
+      "Country": "France",
+      "Amount": 103,
+      "Date": 2012
+    },
+    {
+      "Country": "Germany",
+      "Amount": 11819,
+      "Date": 2012
+    },
+    {
+      "Country": "Greece",
+      "Amount": 5,
+      "Date": 2012
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 12,
+      "Date": 2012
+    },
+    {
+      "Country": "Iraq",
+      "Amount": 4,
+      "Date": 2012
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 17,
+      "Date": 2012
+    },
+    {
+      "Country": "Israel",
+      "Amount": 2,
+      "Date": 2012
+    },
+    {
+      "Country": "Italy",
+      "Amount": 227,
+      "Date": 2012
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 1,
+      "Date": 2012
+    },
+    {
+      "Country": "Kuwait",
+      "Amount": 3,
+      "Date": 2012
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 1,
+      "Date": 2012
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2012
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 46,
+      "Date": 2012
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 5,
+      "Date": 2012
+    },
+    {
+      "Country": "Norway",
+      "Amount": 37,
+      "Date": 2012
+    },
+    {
+      "Country": "Peru",
+      "Amount": 1,
+      "Date": 2012
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 2,
+      "Date": 2012
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2012
+    },
+    {
+      "Country": "Romania",
+      "Amount": 9,
+      "Date": 2012
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 7,
+      "Date": 2012
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2012
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 380,
+      "Date": 2012
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 41,
+      "Date": 2012
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 30,
+      "Date": 2012
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 6,
+      "Date": 2012
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 6,
+      "Date": 2012
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 107,
+      "Date": 2012
+    },
+    {
+      "Country": "United States",
+      "Amount": 515,
+      "Date": 2012
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 6,
+      "Date": 2012
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2011
+    },
+    {
+      "Country": "Australia",
+      "Amount": 271,
+      "Date": 2011
+    },
+    {
+      "Country": "Austria",
+      "Amount": 44,
+      "Date": 2011
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 89,
+      "Date": 2011
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 29,
+      "Date": 2011
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 28,
+      "Date": 2011
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1104,
+      "Date": 2011
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2011
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 25,
+      "Date": 2011
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 62,
+      "Date": 2011
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 5,
+      "Date": 2011
+    },
+    {
+      "Country": "Finland",
+      "Amount": 10,
+      "Date": 2011
+    },
+    {
+      "Country": "France",
+      "Amount": 100,
+      "Date": 2011
+    },
+    {
+      "Country": "Germany",
+      "Amount": 11697,
+      "Date": 2011
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 12,
+      "Date": 2011
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 19,
+      "Date": 2011
+    },
+    {
+      "Country": "Israel",
+      "Amount": 2,
+      "Date": 2011
+    },
+    {
+      "Country": "Italy",
+      "Amount": 210,
+      "Date": 2011
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 5,
+      "Date": 2011
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 1,
+      "Date": 2011
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2011
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 52,
+      "Date": 2011
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 10,
+      "Date": 2011
+    },
+    {
+      "Country": "Norway",
+      "Amount": 43,
+      "Date": 2011
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 2,
+      "Date": 2011
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2011
+    },
+    {
+      "Country": "Romania",
+      "Amount": 7,
+      "Date": 2011
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 3,
+      "Date": 2011
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2011
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 415,
+      "Date": 2011
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 44,
+      "Date": 2011
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 27,
+      "Date": 2011
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 2,
+      "Date": 2011
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 5,
+      "Date": 2011
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 97,
+      "Date": 2011
+    },
+    {
+      "Country": "United States",
+      "Amount": 570,
+      "Date": 2011
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 1,
+      "Date": 2011
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2011
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2010
+    },
+    {
+      "Country": "Australia",
+      "Amount": 209,
+      "Date": 2010
+    },
+    {
+      "Country": "Austria",
+      "Amount": 36,
+      "Date": 2010
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 62,
+      "Date": 2010
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 29,
+      "Date": 2010
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 28,
+      "Date": 2010
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1133,
+      "Date": 2010
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 25,
+      "Date": 2010
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 75,
+      "Date": 2010
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 5,
+      "Date": 2010
+    },
+    {
+      "Country": "Finland",
+      "Amount": 10,
+      "Date": 2010
+    },
+    {
+      "Country": "France",
+      "Amount": 101,
+      "Date": 2010
+    },
+    {
+      "Country": "Germany",
+      "Amount": 12514,
+      "Date": 2010
+    },
+    {
+      "Country": "Greece",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 13,
+      "Date": 2010
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 21,
+      "Date": 2010
+    },
+    {
+      "Country": "Italy",
+      "Amount": 214,
+      "Date": 2010
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 5,
+      "Date": 2010
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 61,
+      "Date": 2010
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 12,
+      "Date": 2010
+    },
+    {
+      "Country": "Norway",
+      "Amount": 45,
+      "Date": 2010
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 2,
+      "Date": 2010
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2010
+    },
+    {
+      "Country": "Romania",
+      "Amount": 7,
+      "Date": 2010
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 3,
+      "Date": 2010
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 454,
+      "Date": 2010
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 50,
+      "Date": 2010
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 18,
+      "Date": 2010
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 4,
+      "Date": 2010
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 87,
+      "Date": 2010
+    },
+    {
+      "Country": "United States",
+      "Amount": 613,
+      "Date": 2010
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 8,
+      "Date": 2010
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2010
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2009
+    },
+    {
+      "Country": "Australia",
+      "Amount": 183,
+      "Date": 2009
+    },
+    {
+      "Country": "Austria",
+      "Amount": 33,
+      "Date": 2009
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 50,
+      "Date": 2009
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 29,
+      "Date": 2009
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 27,
+      "Date": 2009
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1128,
+      "Date": 2009
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2009
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 20,
+      "Date": 2009
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 80,
+      "Date": 2009
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 5,
+      "Date": 2009
+    },
+    {
+      "Country": "Finland",
+      "Amount": 11,
+      "Date": 2009
+    },
+    {
+      "Country": "France",
+      "Amount": 98,
+      "Date": 2009
+    },
+    {
+      "Country": "Germany",
+      "Amount": 12950,
+      "Date": 2009
+    },
+    {
+      "Country": "Greece",
+      "Amount": 2,
+      "Date": 2009
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 6,
+      "Date": 2009
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 19,
+      "Date": 2009
+    },
+    {
+      "Country": "Italy",
+      "Amount": 194,
+      "Date": 2009
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 5,
+      "Date": 2009
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": "",
+      "Date": 2009
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2009
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 69,
+      "Date": 2009
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 11,
+      "Date": 2009
+    },
+    {
+      "Country": "Norway",
+      "Amount": 48,
+      "Date": 2009
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 1,
+      "Date": 2009
+    },
+    {
+      "Country": "Poland",
+      "Amount": 2,
+      "Date": 2009
+    },
+    {
+      "Country": "Romania",
+      "Amount": 8,
+      "Date": 2009
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 6,
+      "Date": 2009
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2009
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 445,
+      "Date": 2009
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 57,
+      "Date": 2009
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 4,
+      "Date": 2009
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 1,
+      "Date": 2009
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 4,
+      "Date": 2009
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 73,
+      "Date": 2009
+    },
+    {
+      "Country": "United States",
+      "Amount": 663,
+      "Date": 2009
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 9,
+      "Date": 2009
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2009
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2008
+    },
+    {
+      "Country": "Australia",
+      "Amount": 170,
+      "Date": 2008
+    },
+    {
+      "Country": "Austria",
+      "Amount": 27,
+      "Date": 2008
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 41,
+      "Date": 2008
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 27,
+      "Date": 2008
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 27,
+      "Date": 2008
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1190,
+      "Date": 2008
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2008
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 20,
+      "Date": 2008
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 97,
+      "Date": 2008
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 4,
+      "Date": 2008
+    },
+    {
+      "Country": "Finland",
+      "Amount": 11,
+      "Date": 2008
+    },
+    {
+      "Country": "France",
+      "Amount": 89,
+      "Date": 2008
+    },
+    {
+      "Country": "Germany",
+      "Amount": 9650,
+      "Date": 2008
+    },
+    {
+      "Country": "Greece",
+      "Amount": 26,
+      "Date": 2008
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 6,
+      "Date": 2008
+    },
+    {
+      "Country": "Iraq",
+      "Amount": 4,
+      "Date": 2008
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 19,
+      "Date": 2008
+    },
+    {
+      "Country": "Italy",
+      "Amount": 166,
+      "Date": 2008
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 5,
+      "Date": 2008
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": "",
+      "Date": 2008
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2008
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 79,
+      "Date": 2008
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 11,
+      "Date": 2008
+    },
+    {
+      "Country": "Norway",
+      "Amount": 45,
+      "Date": 2008
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2008
+    },
+    {
+      "Country": "Romania",
+      "Amount": 8,
+      "Date": 2008
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 9,
+      "Date": 2008
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2008
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 424,
+      "Date": 2008
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 47,
+      "Date": 2008
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 4,
+      "Date": 2008
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 1,
+      "Date": 2008
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 4,
+      "Date": 2008
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 69,
+      "Date": 2008
+    },
+    {
+      "Country": "United States",
+      "Amount": 655,
+      "Date": 2008
+    },
+    {
+      "Country": "Zambia",
+      "Amount": 9,
+      "Date": 2008
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2008
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 4,
+      "Date": 2007
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2007
+    },
+    {
+      "Country": "Australia",
+      "Amount": 433,
+      "Date": 2007
+    },
+    {
+      "Country": "Austria",
+      "Amount": 30,
+      "Date": 2007
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 28,
+      "Date": 2007
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 27,
+      "Date": 2007
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 26,
+      "Date": 2007
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1218,
+      "Date": 2007
+    },
+    {
+      "Country": "C√¥te d'Ivoire",
+      "Amount": 1,
+      "Date": 2007
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 20,
+      "Date": 2007
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 127,
+      "Date": 2007
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 2,
+      "Date": 2007
+    },
+    {
+      "Country": "Finland",
+      "Amount": 9,
+      "Date": 2007
+    },
+    {
+      "Country": "France",
+      "Amount": 86,
+      "Date": 2007
+    },
+    {
+      "Country": "Germany",
+      "Amount": 9485,
+      "Date": 2007
+    },
+    {
+      "Country": "Greece",
+      "Amount": 40,
+      "Date": 2007
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 7,
+      "Date": 2007
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 18,
+      "Date": 2007
+    },
+    {
+      "Country": "Italy",
+      "Amount": 129,
+      "Date": 2007
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 4,
+      "Date": 2007
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": "",
+      "Date": 2007
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 1,
+      "Date": 2007
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 96,
+      "Date": 2007
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 10,
+      "Date": 2007
+    },
+    {
+      "Country": "Norway",
+      "Amount": 38,
+      "Date": 2007
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2007
+    },
+    {
+      "Country": "Romania",
+      "Amount": 8,
+      "Date": 2007
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 2,
+      "Date": 2007
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 435,
+      "Date": 2007
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 33,
+      "Date": 2007
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 4,
+      "Date": 2007
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 1,
+      "Date": 2007
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 4,
+      "Date": 2007
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 64,
+      "Date": 2007
+    },
+    {
+      "Country": "United States",
+      "Amount": 684,
+      "Date": 2007
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 2007
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 4,
+      "Date": 2006
+    },
+    {
+      "Country": "Armenia",
+      "Amount": 14,
+      "Date": 2006
+    },
+    {
+      "Country": "Australia",
+      "Amount": 307,
+      "Date": 2006
+    },
+    {
+      "Country": "Austria",
+      "Amount": 10,
+      "Date": 2006
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 14,
+      "Date": 2006
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 27,
+      "Date": 2006
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 23,
+      "Date": 2006
+    },
+    {
+      "Country": "Canada",
+      "Amount": 684,
+      "Date": 2006
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 16,
+      "Date": 2006
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 145,
+      "Date": 2006
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 1,
+      "Date": 2006
+    },
+    {
+      "Country": "Finland",
+      "Amount": 4,
+      "Date": 2006
+    },
+    {
+      "Country": "France",
+      "Amount": 84,
+      "Date": 2006
+    },
+    {
+      "Country": "Germany",
+      "Amount": 9336,
+      "Date": 2006
+    },
+    {
+      "Country": "Greece",
+      "Amount": 42,
+      "Date": 2006
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 5,
+      "Date": 2006
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2006
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 12,
+      "Date": 2006
+    },
+    {
+      "Country": "Italy",
+      "Amount": 54,
+      "Date": 2006
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 5,
+      "Date": 2006
+    },
+    {
+      "Country": "Malaysia",
+      "Amount": 5,
+      "Date": 2006
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2006
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 139,
+      "Date": 2006
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 8,
+      "Date": 2006
+    },
+    {
+      "Country": "Norway",
+      "Amount": 37,
+      "Date": 2006
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2006
+    },
+    {
+      "Country": "Rep. of Moldova",
+      "Amount": 1,
+      "Date": 2006
+    },
+    {
+      "Country": "Romania",
+      "Amount": 7,
+      "Date": 2006
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 5,
+      "Date": 2006
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2006
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 440,
+      "Date": 2006
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 32,
+      "Date": 2006
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 5,
+      "Date": 2006
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 4,
+      "Date": 2006
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 100,
+      "Date": 2006
+    },
+    {
+      "Country": "United States",
+      "Amount": 674,
+      "Date": 2006
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 4,
+      "Date": 2005
+    },
+    {
+      "Country": "Australia",
+      "Amount": 346,
+      "Date": 2005
+    },
+    {
+      "Country": "Austria",
+      "Amount": 11,
+      "Date": 2005
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 22,
+      "Date": 2005
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 38,
+      "Date": 2005
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 23,
+      "Date": 2005
+    },
+    {
+      "Country": "Canada",
+      "Amount": 591,
+      "Date": 2005
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 16,
+      "Date": 2005
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 151,
+      "Date": 2005
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 1,
+      "Date": 2005
+    },
+    {
+      "Country": "Finland",
+      "Amount": 3,
+      "Date": 2005
+    },
+    {
+      "Country": "France",
+      "Amount": 83,
+      "Date": 2005
+    },
+    {
+      "Country": "Germany",
+      "Amount": 15619,
+      "Date": 2005
+    },
+    {
+      "Country": "Greece",
+      "Amount": 57,
+      "Date": 2005
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 6,
+      "Date": 2005
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2005
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 10,
+      "Date": 2005
+    },
+    {
+      "Country": "Italy",
+      "Amount": 23,
+      "Date": 2005
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 4,
+      "Date": 2005
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2005
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 176,
+      "Date": 2005
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 10,
+      "Date": 2005
+    },
+    {
+      "Country": "Norway",
+      "Amount": 39,
+      "Date": 2005
+    },
+    {
+      "Country": "Poland",
+      "Amount": 4,
+      "Date": 2005
+    },
+    {
+      "Country": "Romania",
+      "Amount": 5,
+      "Date": 2005
+    },
+    {
+      "Country": "Russian Federation",
+      "Amount": 5,
+      "Date": 2005
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2005
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 451,
+      "Date": 2005
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 34,
+      "Date": 2005
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 4,
+      "Date": 2005
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 4,
+      "Date": 2005
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 193,
+      "Date": 2005
+    },
+    {
+      "Country": "United States",
+      "Amount": 386,
+      "Date": 2005
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 4,
+      "Date": 2004
+    },
+    {
+      "Country": "Australia",
+      "Amount": 306,
+      "Date": 2004
+    },
+    {
+      "Country": "Austria",
+      "Amount": 17,
+      "Date": 2004
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 34,
+      "Date": 2004
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 14,
+      "Date": 2004
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 27,
+      "Date": 2004
+    },
+    {
+      "Country": "Canada",
+      "Amount": 510,
+      "Date": 2004
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 12,
+      "Date": 2004
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 163,
+      "Date": 2004
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 1,
+      "Date": 2004
+    },
+    {
+      "Country": "Finland",
+      "Amount": 2,
+      "Date": 2004
+    },
+    {
+      "Country": "France",
+      "Amount": 79,
+      "Date": 2004
+    },
+    {
+      "Country": "Germany",
+      "Amount": 17302,
+      "Date": 2004
+    },
+    {
+      "Country": "Greece",
+      "Amount": 64,
+      "Date": 2004
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 5,
+      "Date": 2004
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2004
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 10,
+      "Date": 2004
+    },
+    {
+      "Country": "Italy",
+      "Amount": 23,
+      "Date": 2004
+    },
+    {
+      "Country": "Jordan",
+      "Amount": 4,
+      "Date": 2004
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 2004
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2004
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 206,
+      "Date": 2004
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 7,
+      "Date": 2004
+    },
+    {
+      "Country": "Norway",
+      "Amount": 31,
+      "Date": 2004
+    },
+    {
+      "Country": "Poland",
+      "Amount": 5,
+      "Date": 2004
+    },
+    {
+      "Country": "Romania",
+      "Amount": 5,
+      "Date": 2004
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2004
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 406,
+      "Date": 2004
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 38,
+      "Date": 2004
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 7,
+      "Date": 2004
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 1,
+      "Date": 2004
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 2,
+      "Date": 2004
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 206,
+      "Date": 2004
+    },
+    {
+      "Country": "United States",
+      "Amount": 367,
+      "Date": 2004
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 2,
+      "Date": 2004
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 4,
+      "Date": 2003
+    },
+    {
+      "Country": "Australia",
+      "Amount": 262,
+      "Date": 2003
+    },
+    {
+      "Country": "Austria",
+      "Amount": 21,
+      "Date": 2003
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 32,
+      "Date": 2003
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 14,
+      "Date": 2003
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 22,
+      "Date": 2003
+    },
+    {
+      "Country": "Canada",
+      "Amount": 521,
+      "Date": 2003
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 6,
+      "Date": 2003
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 165,
+      "Date": 2003
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 1,
+      "Date": 2003
+    },
+    {
+      "Country": "Finland",
+      "Amount": 5,
+      "Date": 2003
+    },
+    {
+      "Country": "France",
+      "Amount": 76,
+      "Date": 2003
+    },
+    {
+      "Country": "Germany",
+      "Amount": 18410,
+      "Date": 2003
+    },
+    {
+      "Country": "Greece",
+      "Amount": 62,
+      "Date": 2003
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 3,
+      "Date": 2003
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2003
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 8,
+      "Date": 2003
+    },
+    {
+      "Country": "Israel",
+      "Amount": 3909,
+      "Date": 2003
+    },
+    {
+      "Country": "Italy",
+      "Amount": 24,
+      "Date": 2003
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 2003
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2003
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 212,
+      "Date": 2003
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 7,
+      "Date": 2003
+    },
+    {
+      "Country": "Norway",
+      "Amount": 33,
+      "Date": 2003
+    },
+    {
+      "Country": "Poland",
+      "Amount": 18,
+      "Date": 2003
+    },
+    {
+      "Country": "Romania",
+      "Amount": 4,
+      "Date": 2003
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 2003
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 462,
+      "Date": 2003
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 55,
+      "Date": 2003
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 2,
+      "Date": 2003
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 229,
+      "Date": 2003
+    },
+    {
+      "Country": "United States",
+      "Amount": 349,
+      "Date": 2003
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 3,
+      "Date": 2002
+    },
+    {
+      "Country": "Australia",
+      "Amount": 507,
+      "Date": 2002
+    },
+    {
+      "Country": "Austria",
+      "Amount": 33,
+      "Date": 2002
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 40,
+      "Date": 2002
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 14,
+      "Date": 2002
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 22,
+      "Date": 2002
+    },
+    {
+      "Country": "Canada",
+      "Amount": 560,
+      "Date": 2002
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 6,
+      "Date": 2002
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 166,
+      "Date": 2002
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 1,
+      "Date": 2002
+    },
+    {
+      "Country": "Finland",
+      "Amount": 6,
+      "Date": 2002
+    },
+    {
+      "Country": "France",
+      "Amount": 76,
+      "Date": 2002
+    },
+    {
+      "Country": "Germany",
+      "Amount": 19035,
+      "Date": 2002
+    },
+    {
+      "Country": "Greece",
+      "Amount": 64,
+      "Date": 2002
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 3,
+      "Date": 2002
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2002
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 1,
+      "Date": 2002
+    },
+    {
+      "Country": "Israel",
+      "Amount": 3909,
+      "Date": 2002
+    },
+    {
+      "Country": "Italy",
+      "Amount": 24,
+      "Date": 2002
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 2002
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2002
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 206,
+      "Date": 2002
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 7,
+      "Date": 2002
+    },
+    {
+      "Country": "Norway",
+      "Amount": 60,
+      "Date": 2002
+    },
+    {
+      "Country": "Poland",
+      "Amount": 17,
+      "Date": 2002
+    },
+    {
+      "Country": "Romania",
+      "Amount": 2,
+      "Date": 2002
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 2002
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 481,
+      "Date": 2002
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 63,
+      "Date": 2002
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 2,
+      "Date": 2002
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 495,
+      "Date": 2002
+    },
+    {
+      "Country": "United States",
+      "Amount": 500,
+      "Date": 2002
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 3,
+      "Date": 2001
+    },
+    {
+      "Country": "Australia",
+      "Amount": 431,
+      "Date": 2001
+    },
+    {
+      "Country": "Austria",
+      "Amount": 37,
+      "Date": 2001
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 26,
+      "Date": 2001
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 19,
+      "Date": 2001
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 25,
+      "Date": 2001
+    },
+    {
+      "Country": "Canada",
+      "Amount": 653,
+      "Date": 2001
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 4,
+      "Date": 2001
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 218,
+      "Date": 2001
+    },
+    {
+      "Country": "Ecuador",
+      "Amount": 1,
+      "Date": 2001
+    },
+    {
+      "Country": "Finland",
+      "Amount": 23,
+      "Date": 2001
+    },
+    {
+      "Country": "France",
+      "Amount": 74,
+      "Date": 2001
+    },
+    {
+      "Country": "Greece",
+      "Amount": 23,
+      "Date": 2001
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 3,
+      "Date": 2001
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2001
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 2,
+      "Date": 2001
+    },
+    {
+      "Country": "Israel",
+      "Amount": 3909,
+      "Date": 2001
+    },
+    {
+      "Country": "Italy",
+      "Amount": 31,
+      "Date": 2001
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 2001
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2001
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 325,
+      "Date": 2001
+    },
+    {
+      "Country": "New Zealand",
+      "Amount": 2,
+      "Date": 2001
+    },
+    {
+      "Country": "Norway",
+      "Amount": 52,
+      "Date": 2001
+    },
+    {
+      "Country": "Poland",
+      "Amount": 17,
+      "Date": 2001
+    },
+    {
+      "Country": "Romania",
+      "Amount": 1,
+      "Date": 2001
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 2001
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 1201,
+      "Date": 2001
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 64,
+      "Date": 2001
+    },
+    {
+      "Country": "Turkey",
+      "Amount": 1,
+      "Date": 2001
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 2,
+      "Date": 2001
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1130,
+      "Date": 2001
+    },
+    {
+      "Country": "United States",
+      "Amount": 469,
+      "Date": 2001
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 3,
+      "Date": 2000
+    },
+    {
+      "Country": "Australia",
+      "Amount": 415,
+      "Date": 2000
+    },
+    {
+      "Country": "Austria",
+      "Amount": 58,
+      "Date": 2000
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 88,
+      "Date": 2000
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 23,
+      "Date": 2000
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 8,
+      "Date": 2000
+    },
+    {
+      "Country": "Canada",
+      "Amount": 548,
+      "Date": 2000
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 373,
+      "Date": 2000
+    },
+    {
+      "Country": "Finland",
+      "Amount": 23,
+      "Date": 2000
+    },
+    {
+      "Country": "France",
+      "Amount": 70,
+      "Date": 2000
+    },
+    {
+      "Country": "Greece",
+      "Amount": 22,
+      "Date": 2000
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 2,
+      "Date": 2000
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 2000
+    },
+    {
+      "Country": "Israel",
+      "Amount": 3909,
+      "Date": 2000
+    },
+    {
+      "Country": "Italy",
+      "Amount": 28,
+      "Date": 2000
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 2000
+    },
+    {
+      "Country": "Malta",
+      "Amount": 5,
+      "Date": 2000
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 2000
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 352,
+      "Date": 2000
+    },
+    {
+      "Country": "Norway",
+      "Amount": 173,
+      "Date": 2000
+    },
+    {
+      "Country": "Poland",
+      "Amount": 16,
+      "Date": 2000
+    },
+    {
+      "Country": "Romania",
+      "Amount": 1,
+      "Date": 2000
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 2000
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 2328,
+      "Date": 2000
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 60,
+      "Date": 2000
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 1,
+      "Date": 2000
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1245,
+      "Date": 2000
+    },
+    {
+      "Country": "United States",
+      "Amount": 447,
+      "Date": 2000
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 3,
+      "Date": 1999
+    },
+    {
+      "Country": "Australia",
+      "Amount": 414,
+      "Date": 1999
+    },
+    {
+      "Country": "Austria",
+      "Amount": 57,
+      "Date": 1999
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 118,
+      "Date": 1999
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 23,
+      "Date": 1999
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 4,
+      "Date": 1999
+    },
+    {
+      "Country": "Canada",
+      "Amount": 596,
+      "Date": 1999
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 2,
+      "Date": 1999
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 541,
+      "Date": 1999
+    },
+    {
+      "Country": "Finland",
+      "Amount": 27,
+      "Date": 1999
+    },
+    {
+      "Country": "France",
+      "Amount": 81,
+      "Date": 1999
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 2,
+      "Date": 1999
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 1999
+    },
+    {
+      "Country": "Ireland",
+      "Amount": 1,
+      "Date": 1999
+    },
+    {
+      "Country": "Italy",
+      "Amount": 27,
+      "Date": 1999
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 1999
+    },
+    {
+      "Country": "Mexico",
+      "Amount": 2,
+      "Date": 1999
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 360,
+      "Date": 1999
+    },
+    {
+      "Country": "Norway",
+      "Amount": 234,
+      "Date": 1999
+    },
+    {
+      "Country": "Poland",
+      "Amount": 16,
+      "Date": 1999
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 1999
+    },
+    {
+      "Country": "Sri Lanka",
+      "Amount": 1,
+      "Date": 1999
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 3192,
+      "Date": 1999
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 63,
+      "Date": 1999
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 6,
+      "Date": 1999
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1430,
+      "Date": 1999
+    },
+    {
+      "Country": "United States",
+      "Amount": 470,
+      "Date": 1999
+    },
+    {
+      "Country": "Argentina",
+      "Amount": 3,
+      "Date": 1998
+    },
+    {
+      "Country": "Australia",
+      "Amount": 380,
+      "Date": 1998
+    },
+    {
+      "Country": "Austria",
+      "Amount": 57,
+      "Date": 1998
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 124,
+      "Date": 1998
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 25,
+      "Date": 1998
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 4,
+      "Date": 1998
+    },
+    {
+      "Country": "Canada",
+      "Amount": 723,
+      "Date": 1998
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 2,
+      "Date": 1998
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 445,
+      "Date": 1998
+    },
+    {
+      "Country": "Finland",
+      "Amount": 27,
+      "Date": 1998
+    },
+    {
+      "Country": "France",
+      "Amount": 84,
+      "Date": 1998
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 1998
+    },
+    {
+      "Country": "Italy",
+      "Amount": 61,
+      "Date": 1998
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 1998
+    },
+    {
+      "Country": "Libya",
+      "Amount": 5,
+      "Date": 1998
+    },
+    {
+      "Country": "Malta",
+      "Amount": 2,
+      "Date": 1998
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 388,
+      "Date": 1998
+    },
+    {
+      "Country": "Norway",
+      "Amount": 210,
+      "Date": 1998
+    },
+    {
+      "Country": "Poland",
+      "Amount": 14,
+      "Date": 1998
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 1998
+    },
+    {
+      "Country": "Sri Lanka",
+      "Amount": 1,
+      "Date": 1998
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 5069,
+      "Date": 1998
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 20,
+      "Date": 1998
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 4,
+      "Date": 1998
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 22,
+      "Date": 1998
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1635,
+      "Date": 1998
+    },
+    {
+      "Country": "United States",
+      "Amount": 466,
+      "Date": 1998
+    },
+    {
+      "Country": "Australia",
+      "Amount": 84,
+      "Date": 1997
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 177,
+      "Date": 1997
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 19,
+      "Date": 1997
+    },
+    {
+      "Country": "Canada",
+      "Amount": 932,
+      "Date": 1997
+    },
+    {
+      "Country": "Cyprus",
+      "Amount": 2,
+      "Date": 1997
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 577,
+      "Date": 1997
+    },
+    {
+      "Country": "France",
+      "Amount": 75,
+      "Date": 1997
+    },
+    {
+      "Country": "Iceland",
+      "Amount": 1,
+      "Date": 1997
+    },
+    {
+      "Country": "Italy",
+      "Amount": 71,
+      "Date": 1997
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 1997
+    },
+    {
+      "Country": "Libya",
+      "Amount": 5,
+      "Date": 1997
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 1997
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 386,
+      "Date": 1997
+    },
+    {
+      "Country": "Norway",
+      "Amount": 206,
+      "Date": 1997
+    },
+    {
+      "Country": "Philippines",
+      "Amount": 1,
+      "Date": 1997
+    },
+    {
+      "Country": "Poland",
+      "Amount": 14,
+      "Date": 1997
+    },
+    {
+      "Country": "Spain",
+      "Amount": 2,
+      "Date": 1997
+    },
+    {
+      "Country": "Swaziland",
+      "Amount": 6,
+      "Date": 1997
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 5483,
+      "Date": 1997
+    },
+    {
+      "Country": "Switzerland",
+      "Amount": 54,
+      "Date": 1997
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 21,
+      "Date": 1997
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1668,
+      "Date": 1997
+    },
+    {
+      "Country": "United States",
+      "Amount": 438,
+      "Date": 1997
+    },
+    {
+      "Country": "Australia",
+      "Amount": 78,
+      "Date": 1996
+    },
+    {
+      "Country": "Belgium",
+      "Amount": 177,
+      "Date": 1996
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 18,
+      "Date": 1996
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 13,
+      "Date": 1996
+    },
+    {
+      "Country": "Canada",
+      "Amount": 1274,
+      "Date": 1996
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1070,
+      "Date": 1996
+    },
+    {
+      "Country": "France",
+      "Amount": 74,
+      "Date": 1996
+    },
+    {
+      "Country": "Italy",
+      "Amount": 69,
+      "Date": 1996
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 12,
+      "Date": 1996
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 1996
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 343,
+      "Date": 1996
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 1996
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 5648,
+      "Date": 1996
+    },
+    {
+      "Country": "Ukraine",
+      "Amount": 17,
+      "Date": 1996
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1645,
+      "Date": 1996
+    },
+    {
+      "Country": "United States",
+      "Amount": 450,
+      "Date": 1996
+    },
+    {
+      "Country": "Brazil",
+      "Amount": 19,
+      "Date": 1995
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 9,
+      "Date": 1995
+    },
+    {
+      "Country": "Canada",
+      "Amount": 3177,
+      "Date": 1995
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1763,
+      "Date": 1995
+    },
+    {
+      "Country": "France",
+      "Amount": 71,
+      "Date": 1995
+    },
+    {
+      "Country": "Italy",
+      "Amount": 68,
+      "Date": 1995
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 13,
+      "Date": 1995
+    },
+    {
+      "Country": "Malta",
+      "Amount": 1,
+      "Date": 1995
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 294,
+      "Date": 1995
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 1995
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 6125,
+      "Date": 1995
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1551,
+      "Date": 1995
+    },
+    {
+      "Country": "United States",
+      "Amount": 423,
+      "Date": 1995
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 1,
+      "Date": 1994
+    },
+    {
+      "Country": "Canada",
+      "Amount": 5298,
+      "Date": 1994
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1763,
+      "Date": 1994
+    },
+    {
+      "Country": "Greece",
+      "Amount": 21,
+      "Date": 1994
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 1,
+      "Date": 1994
+    },
+    {
+      "Country": "Italy",
+      "Amount": 68,
+      "Date": 1994
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 16,
+      "Date": 1994
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 264,
+      "Date": 1994
+    },
+    {
+      "Country": "Nigeria",
+      "Amount": 1,
+      "Date": 1994
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 1994
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 6284,
+      "Date": 1994
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1545,
+      "Date": 1994
+    },
+    {
+      "Country": "United States",
+      "Amount": 390,
+      "Date": 1994
+    },
+    {
+      "Country": "Venezuela",
+      "Amount": 1,
+      "Date": 1994
+    },
+    {
+      "Country": "Bulgaria",
+      "Amount": 1,
+      "Date": 1993
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1763,
+      "Date": 1993
+    },
+    {
+      "Country": "Greece",
+      "Amount": 6,
+      "Date": 1993
+    },
+    {
+      "Country": "Hungary",
+      "Amount": 1,
+      "Date": 1993
+    },
+    {
+      "Country": "Italy",
+      "Amount": 66,
+      "Date": 1993
+    },
+    {
+      "Country": "Liberia",
+      "Amount": 16,
+      "Date": 1993
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 252,
+      "Date": 1993
+    },
+    {
+      "Country": "Nigeria",
+      "Amount": 1,
+      "Date": 1993
+    },
+    {
+      "Country": "Spain",
+      "Amount": 1,
+      "Date": 1993
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 6624,
+      "Date": 1993
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1527,
+      "Date": 1993
+    },
+    {
+      "Country": "United States",
+      "Amount": 375,
+      "Date": 1993
+    },
+    {
+      "Country": "Venezuela",
+      "Amount": 1,
+      "Date": 1993
+    },
+    {
+      "Country": "Zimbabwe",
+      "Amount": 1,
+      "Date": 1993
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1741,
+      "Date": 1992
+    },
+    {
+      "Country": "Italy",
+      "Amount": 66,
+      "Date": 1992
+    },
+    {
+      "Country": "Netherlands",
+      "Amount": 252,
+      "Date": 1992
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 6575,
+      "Date": 1992
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 1240,
+      "Date": 1992
+    },
+    {
+      "Country": "United States",
+      "Amount": 383,
+      "Date": 1992
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1679,
+      "Date": 1991
+    },
+    {
+      "Country": "Italy",
+      "Amount": 59,
+      "Date": 1991
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 5807,
+      "Date": 1991
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 606,
+      "Date": 1991
+    },
+    {
+      "Country": "United States",
+      "Amount": 350,
+      "Date": 1991
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1547,
+      "Date": 1990
+    },
+    {
+      "Country": "Italy",
+      "Amount": 51,
+      "Date": 1990
+    },
+    {
+      "Country": "Sweden",
+      "Amount": 4616,
+      "Date": 1990
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 492,
+      "Date": 1990
+    },
+    {
+      "Country": "United States",
+      "Amount": 287,
+      "Date": 1990
+    },
+    {
+      "Country": "Denmark",
+      "Amount": 1376,
+      "Date": 1989
+    },
+    {
+      "Country": "Greece",
+      "Amount": 230,
+      "Date": 1989
+    },
+    {
+      "Country": "Italy",
+      "Amount": 51,
+      "Date": 1989
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 312,
+      "Date": 1989
+    },
+    {
+      "Country": "United States",
+      "Amount": 228,
+      "Date": 1989
+    },
+    {
+      "Country": "Greece",
+      "Amount": 150,
+      "Date": 1988
+    },
+    {
+      "Country": "Italy",
+      "Amount": 10,
+      "Date": 1988
+    },
+    {
+      "Country": "United Kingdom",
+      "Amount": 108,
+      "Date": 1988
+    },
+    {
+      "Country": "United States",
+      "Amount": 171,
+      "Date": 1988
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 630,
+      "Date": 1986
+    },
+    {
+      "Country": "Greece",
+      "Amount": 60,
+      "Date": 1985
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 33080,
+      "Date": 1985
+    },
+    {
+      "Country": "Greece",
+      "Amount": 60,
+      "Date": 1984
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 30000,
+      "Date": 1984
+    },
+    {
+      "Country": "Greece",
+      "Amount": 90,
+      "Date": 1983
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 27180,
+      "Date": 1983
+    },
+    {
+      "Country": "Greece",
+      "Amount": 90,
+      "Date": 1982
+    },
+    {
+      "Country": "Syrian Arab Rep.",
+      "Amount": 12500,
+      "Date": 1982
+    }
+  ]
+  
