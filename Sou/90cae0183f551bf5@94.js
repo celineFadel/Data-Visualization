@@ -1,12 +1,14 @@
 export default function define(runtime, observer) {
   const main = runtime.module();
-  
+
   main.variable(observer()).define(["md"], function (md) {
     return md`
 # Lebanese immigration throughout the years`;
   });
-  
-  main.variable(observer()).define(["countryData", "chart"], function (countryData, chart) {
+
+  main
+    .variable(observer())
+    .define(["countryData", "chart"], function (countryData, chart) {
       var state = {
         valueAccessor: "Amount",
         countryCodeType: "name",
@@ -34,29 +36,595 @@ export default function define(runtime, observer) {
     `;
   });
 
-  main.variable(observer("chart")).define("chart",["SquareMapChart", "classicalWorld", "gridWorld", "d3", "DOM"],function (SquareMapChart, classicalWorld, gridWorld, d3, DOM) {
+  main
+    .variable(observer("chart"))
+    .define(
+      "chart",
+      [
+        "SquareMapChart",
+        "classicalWorld",
+        "gridWorld",
+        "d3",
+        "DOM",
+        "topojson",
+        "require",
+      ],
+      function (
+        SquareMapChart,
+        classicalWorld,
+        gridWorld,
+        d3,
+        DOM,
+        topojson,
+        require
+      ) {
         var chart = new SquareMapChart();
         chart.create(classicalWorld, gridWorld);
 
         var width = 3000,
-        height = 500;
+          height = 500;
 
         const svg = d3
-        .select(DOM.svg(width, height))
-        .style("width", "100%")
-        .style("height", "100%");
+          .select(DOM.svg(width, height))
+          .style("width", "100%")
+          .style("height", "100%");
 
         var inputValue = 1982;
-        var time = ["1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016"];
+        var time = [
+          "1982",
+          "1983",
+          "1984",
+          "1985",
+          "1986",
+          "1987",
+          "1988",
+          "1989",
+          "1990",
+          "1991",
+          "1992",
+          "1993",
+          "1994",
+          "1995",
+          "1996",
+          "1997",
+          "1998",
+          "1999",
+          "2000",
+          "2001",
+          "2002",
+          "2003",
+          "2004",
+          "2005",
+          "2006",
+          "2007",
+          "2008",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+        ];
 
-        svg.on("mouseover", function() {
-          console.log("Hi");
+        var color = d3
+          .scaleThreshold()
+          .range([
+            "#fde0dd",
+            "#fcc5c0",
+            "#fa9fb5",
+            "#f768a1",
+            "#dd3497",
+            "#ae017e",
+            "#7a0177",
+            "#49006a",
+          ])
+          .domain([0.014, 0.032, 0.045, 0.075, 0.1, 0.15, 0.3, 0.56]);
+
+        var colorFB = d3
+          .scaleThreshold()
+          .range([
+            "#4d9900",
+            "#66cc00",
+            "#80ff00",
+            "#99ff33",
+            "#b3ff66",
+            "#ccff99",
+          ])
+          .domain([-40000, -15000, -10000, -5000, -2500, 0]);
+
+        var colorDem = d3
+          .scaleThreshold()
+          .range([
+            "#809fff",
+            "#4d79ff",
+            "#1a53ff",
+            "#0039e6",
+            "#002db3",
+            "#002080",
+            "#001a66",
+          ])
+          .domain([1, 2500, 10000, 25000, 40000, 55000, 70000]);
+
+        var colorRep = d3
+          .scaleThreshold()
+          .range([
+            "#ffcccc",
+            "#ff9999",
+            "#ff6666",
+            "#ff3333",
+            "#ff0000",
+            "#cc0000",
+            "#990000",
+          ])
+          .domain([1, 2500, 10000, 25000, 40000, 55000, 70000]);
+
+        var tooltip = d3
+          .select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("background", "black")
+          .style("position", "absolute")
+          .style("z-index", "10")
+          .style("visibility", "hidden");
+
+        var projection = d3.geoMercator().scale(1).translate([0, 0]);
+        var path = d3.geoPath().projection(projection);
+
+        const files = [
+          "data_files/immigrants.csv",
+          "data_files/immigrants.json",
+        ];
+        const promises = [];
+
+        files.forEach(function (url, index) {
+          promises.push(index ? d3.json(url) : d3.csv(url));
         });
 
+        Promise.all(promises).then(ready);
+
+        function ready(mov_vs_fb) {
+          const mov_vs_fbByDist1982 = {};
+          const mov_vs_fbByDist1983 = {};
+          const mov_vs_fbByDist1984 = {};
+          const mov_vs_fbByDist1985 = {};
+          const mov_vs_fbByDist1986 = {};
+          const mov_vs_fbByDist1987 = {};
+          const mov_vs_fbByDist1988 = {};
+          const mov_vs_fbByDist1989 = {};
+          const mov_vs_fbByDist1990 = {};
+          const mov_vs_fbByDist1991 = {};
+          const mov_vs_fbByDist1992 = {};
+          const mov_vs_fbByDist1993 = {};
+          const mov_vs_fbByDist1994 = {};
+          const mov_vs_fbByDist1995 = {};
+          const mov_vs_fbByDist1996 = {};
+          const mov_vs_fbByDist1997 = {};
+          const mov_vs_fbByDist1998 = {};
+          const mov_vs_fbByDist1999 = {};
+          const mov_vs_fbByDist2000 = {};
+          const mov_vs_fbByDist2001 = {};
+          const mov_vs_fbByDist2002 = {};
+          const mov_vs_fbByDist2003 = {};
+          const mov_vs_fbByDist2004 = {};
+          const mov_vs_fbByDist2005 = {};
+          const mov_vs_fbByDist2006 = {};
+          const mov_vs_fbByDist2007 = {};
+          const mov_vs_fbByDist2008 = {};
+          const mov_vs_fbByDist2009 = {};
+          const mov_vs_fbByDist2010 = {};
+          const mov_vs_fbByDist2011 = {};
+          const mov_vs_fbByDist2012 = {};
+          const mov_vs_fbByDist2013 = {};
+          const mov_vs_fbByDist2014 = {};
+          const mov_vs_fbByDist2015 = {};
+          const mov_vs_fbByDist2016 = {};
+
+          mov_vs_fb[1].forEach(function (d) {
+            d.Country = d.Country;
+            d.Amount = +d.Amount;
+            d.Date = +d.Date;
+            if (d.Date == 1982) {
+              mov_vs_fbByDist1982[d.Country] = d;
+            } else if (d.Date == 1983) {
+              mov_vs_fbByDist1983[d.Country] = d;
+            } else if (d.Date == 1984) {
+              mov_vs_fbByDist1984[d.Country] = d;
+            } else if (d.Date == 1985) {
+              mov_vs_fbByDist1985[d.Country] = d;
+            } else if (d.Date == 1986) {
+              mov_vs_fbByDist1986[d.Country] = d;
+            } else if (d.Date == 1987) {
+              mov_vs_fbByDist1987[d.Country] = d;
+            } else if (d.Date == 1988) {
+              mov_vs_fbByDist1988[d.Country] = d;
+            } else if (d.Date == 1989) {
+              mov_vs_fbByDist1989[d.Country] = d;
+            } else if (d.Date == 1990) {
+              mov_vs_fbByDist1990[d.Country] = d;
+            } else if (d.Date == 1991) {
+              mov_vs_fbByDist1991[d.Country] = d;
+            } else if (d.Date == 1992) {
+              mov_vs_fbByDist1992[d.Country] = d;
+            } else if (d.Date == 1993) {
+              mov_vs_fbByDist1993[d.Country] = d;
+            } else if (d.Date == 1994) {
+              mov_vs_fbByDist1994[d.Country] = d;
+            } else if (d.Date == 1995) {
+              mov_vs_fbByDist1995[d.Country] = d;
+            } else if (d.Date == 1996) {
+              mov_vs_fbByDist1996[d.Country] = d;
+            } else if (d.Date == 1997) {
+              mov_vs_fbByDist1997[d.Country] = d;
+            } else if (d.Date == 1998) {
+              mov_vs_fbByDist1998[d.Country] = d;
+            } else if (d.Date == 1999) {
+              mov_vs_fbByDist1999[d.Country] = d;
+            } else if (d.Date == 2000) {
+              mov_vs_fbByDist2000[d.Country] = d;
+            } else if (d.Date == 2001) {
+              mov_vs_fbByDist2001[d.Country] = d;
+            } else if (d.Date == 2002) {
+              mov_vs_fbByDist2002[d.Country] = d;
+            } else if (d.Date == 2003) {
+              mov_vs_fbByDist2003[d.Country] = d;
+            } else if (d.Date == 2004) {
+              mov_vs_fbByDist2004[d.Country] = d;
+            } else if (d.Date == 2005) {
+              mov_vs_fbByDist2005[d.Country] = d;
+            } else if (d.Date == 2006) {
+              mov_vs_fbByDist2006[d.Country] = d;
+            } else if (d.Date == 2007) {
+              mov_vs_fbByDist2007[d.Country] = d;
+            } else if (d.Date == 2008) {
+              mov_vs_fbByDist2008[d.Country] = d;
+            } else if (d.Date == 2009) {
+              mov_vs_fbByDist2009[d.Country] = d;
+            } else if (d.Date == 2010) {
+              mov_vs_fbByDist2010[d.Country] = d;
+            } else if (d.Date == 2011) {
+              mov_vs_fbByDist2011[d.Country] = d;
+            } else if (d.Date == 2012) {
+              mov_vs_fbByDist2012[d.Country] = d;
+            } else if (d.Date == 2013) {
+              mov_vs_fbByDist2013[d.Country] = d;
+            } else if (d.Date == 2014) {
+              mov_vs_fbByDist2014[d.Country] = d;
+            } else if (d.Date == 2015) {
+              mov_vs_fbByDist2015[d.Country] = d;
+            } else if (d.Date == 2016) {
+              mov_vs_fbByDist2016[d.Country] = d;
+            }
+          });
+
+          var format = d3.format(".2%");
+          var commas = d3.format(",");
+
+          var path = d3
+            .geoPath()
+            .projection(d3.geoMercator().scale(1).translate([0, 0]));
+
+          // var subset = topojson
+          // .feature(mov_vs_fb[1], mov_vs_fb[1].Amount)
+          // .features.filter(function (d) {
+          //   return d.Country in mov_vs_fbByDist1982;
+          // });
+
+          d3.json("./data_files/countries.json").then((subset) => {
+            console.log(subset);
+            svg
+              .append("g")
+              .attr("class", "congress")
+              .selectAll("path")
+              .data(subset)
+              .enter()
+              .append("path")
+              .attr("d", path)
+              .style("fill", initialState)
+              .on("mouseover", function (d) {
+                console.log("Hi");
+                var val = mov_vs_fbByDist1982[d.Country];
+                var fill_color = color(val["poe_2018"]);
+                tooltip.html("");
+                tooltip
+                  .style("visibility", "visible")
+                  .style("border", "7px solid " + fill_color);
+
+                tooltip.append("h3").style("color", "white").text(val);
+
+                d3.selectAll(".congress path")
+                  .style("opacity", 0.3)
+                  .style("stroke", null);
+                d3.select(this)
+                  .style("opacity", 1)
+                  .style("stroke", "#222")
+                  .raise();
+                d3.selectAll(".STATE_FIPS").style("opacity", 0);
+                return d.Amount;
+              })
+              .on("mousemove", function () {
+                return tooltip
+                  .style("top", d3.event.pageY - 52 + "px")
+                  .style("left", d3.event.pageX + 18 + "px");
+              })
+              .on("mouseout", function () {
+                tooltip.style("visibility", "hidden");
+                d3.selectAll(".congress path").style("opacity", 1);
+                d3.selectAll(".STATE_FIPS").style("opacity", 1);
+              });
+            // when the input range changes update the rectangle
+            d3.select("#timeslide").on("input", function () {
+              update(+this.value);
+            });
+
+            function update(value) {
+              document.getElementById("range").innerHTML = time[value];
+              inputValue = time[value];
+
+              d3.selectAll(".congress path").remove();
+              svg
+                .append("g")
+                .attr("class", "congress")
+                .selectAll("path")
+                .data(subset)
+                .enter()
+                .append("path")
+                .attr("d", path)
+                .style("fill", function (d) {
+                  return timeMatch(d);
+                })
+                .on("mouseover", function (d) {
+                  var val = use_data(d);
+                  var fill_color = color(val["poe_2018"]);
+                  tooltip.html("");
+                  tooltip
+                    .style("visibility", "visible")
+                    .style("border", "7px solid " + fill_color);
+
+                  tooltip
+                    .append("h3")
+                    .text(val.geolabel)
+                    .style("color", "white");
+                  tooltip
+                    .append("div")
+                    .style("color", "white")
+                    .text("Margin of Victory: " + commas(val["mov_2016"]));
+                  tooltip
+                    .append("div")
+                    .style("color", "white")
+                    .text(
+                      "Margin of Victory Compared to Foreign Born Growth: " +
+                        commas(val["mov_vs_FB"])
+                    );
+                  tooltip
+                    .append("div")
+                    .style("color", "white")
+                    .text(
+                      "Foreign Born Percentage of Electorate 2018: " +
+                        format(val["poe_2018"])
+                    );
+
+                  d3.selectAll(".congress path")
+                    .style("opacity", 0.3)
+                    .style("stroke", null);
+                  d3.select(this)
+                    .style("opacity", 1)
+                    .style("stroke", "#222")
+                    .raise();
+                  d3.selectAll(".STATE_FIPS").style("opacity", 0);
+                })
+                .on("mousemove", function () {
+                  return tooltip
+                    .style("top", d3.event.pageY - 52 + "px")
+                    .style("left", d3.event.pageX + 18 + "px");
+                })
+                .on("mouseout", function () {
+                  tooltip.style("visibility", "hidden");
+                  d3.selectAll(".congress path").style("opacity", 1);
+                  d3.selectAll(".STATE_FIPS").style("opacity", 1);
+                });
+            }
+          });
+
+          // svg.append("path")
+          //     .datum(topojson.mesh(us, us.objects.STATE_FIPS, function(a, b) { return a.id !== b.id; }))
+          //     .attr("class", "STATE_FIPS")
+          //     .attr("d", path);
+
+          svg
+            .append("text")
+            .style("font-weight", "bold")
+            .attr("x", width - 430)
+            .attr("y", height - 170)
+            .text("Margin of Victory vs");
+          svg
+            .append("text")
+            .style("font-weight", "bold")
+            .attr("x", width - 430)
+            .attr("y", height - 152)
+            .text("Foreign Born Growth");
+
+          var legend1 = svg
+            .selectAll(".legend")
+            .data(colorDem.domain().reverse())
+            .enter()
+            .append("g")
+            .attr("transform", function (d, i) {
+              return (
+                "translate(" +
+                (width - 410) +
+                "," +
+                (height - 144 + 16 * i) +
+                ")"
+              );
+            });
+
+          legend1
+            .append("rect")
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", function (d) {
+              return colorDem(d);
+            });
+
+          legend1
+            .append("text")
+            .attr("x", 16)
+            .attr("y", 9)
+            .style("font-size", "10px")
+            .text(function (d) {
+              return commas(d);
+            });
+
+          var legend2 = svg
+            .selectAll(".legend")
+            .data(colorRep.domain().reverse())
+            .enter()
+            .append("g")
+            .attr("transform", function (d, i) {
+              return (
+                "translate(" +
+                (width - 425) +
+                "," +
+                (height - 144 + 16 * i) +
+                ")"
+              );
+            });
+
+          legend2
+            .append("rect")
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", function (d) {
+              return colorRep(d);
+            });
+
+          var legend3 = svg
+            .selectAll(".legend")
+            .data(colorFB.domain().reverse())
+            .enter()
+            .append("g")
+            .attr("transform", function (d, i) {
+              return (
+                "translate(" +
+                (width - 350) +
+                "," +
+                (height - 144 + 16 * i) +
+                ")"
+              );
+            });
+
+          legend3
+            .append("rect")
+            .attr("width", 10)
+            .attr("height", 10)
+            .style("fill", function (d) {
+              return colorFB(d);
+            });
+
+          legend3
+            .append("text")
+            .attr("x", 16)
+            .attr("y", 9)
+            .style("font-size", "10px")
+            .text(function (d) {
+              return commas(d);
+            });
+
+          function use_data(d) {
+            if (d.Date == 1982) {
+              return mov_vs_fbByDist1982[d.Country];
+            } else if (d.Date == 1983) {
+              return mov_vs_fbByDist1983[d.Country];
+            } else if (d.Date == 1984) {
+              return mov_vs_fbByDist1984[d.Country];
+            } else if (d.Date == 1985) {
+              return mov_vs_fbByDist1985[d.Country];
+            } else if (d.Date == 1986) {
+              return mov_vs_fbByDist1986[d.Country];
+            } else if (d.Date == 1987) {
+              return mov_vs_fbByDist1987[d.Country];
+            } else if (d.Date == 1988) {
+              return mov_vs_fbByDist1988[d.Country];
+            } else if (d.Date == 1989) {
+              return mov_vs_fbByDist1989[d.Country];
+            } else if (d.Date == 1990) {
+              return mov_vs_fbByDist1990[d.Country];
+            } else if (d.Date == 1991) {
+              return mov_vs_fbByDist1991[d.Country];
+            } else if (d.Date == 1992) {
+              return mov_vs_fbByDist1992[d.Country];
+            } else if (d.Date == 1993) {
+              return mov_vs_fbByDist1993[d.Country];
+            } else if (d.Date == 1994) {
+              return mov_vs_fbByDist1994[d.Country];
+            } else if (d.Date == 1995) {
+              return mov_vs_fbByDist1995[d.Country];
+            } else if (d.Date == 1996) {
+              return mov_vs_fbByDist1996[d.Country];
+            } else if (d.Date == 1997) {
+              return mov_vs_fbByDist1997[d.Country];
+            } else if (d.Date == 1998) {
+              return mov_vs_fbByDist1998[d.Country];
+            } else if (d.Date == 1999) {
+              return mov_vs_fbByDist1999[d.Country];
+            } else if (d.Date == 2000) {
+              return mov_vs_fbByDist2000[d.Country];
+            } else if (d.Date == 2001) {
+              return mov_vs_fbByDist2001[d.Country];
+            } else if (d.Date == 2002) {
+              return mov_vs_fbByDist2002[d.Country];
+            } else if (d.Date == 2003) {
+              return mov_vs_fbByDist2003[d.Country];
+            } else if (d.Date == 2004) {
+              return mov_vs_fbByDist2004[d.Country];
+            } else if (d.Date == 2005) {
+              return mov_vs_fbByDist2005[d.Country];
+            } else if (d.Date == 2006) {
+              return mov_vs_fbByDist2006[d.Country];
+            } else if (d.Date == 2007) {
+              return mov_vs_fbByDist2007[d.Country];
+            } else if (d.Date == 2008) {
+              return mov_vs_fbByDist2008[d.Country];
+            } else if (d.Date == 2009) {
+              return mov_vs_fbByDist2009[d.Country];
+            } else if (d.Date == 2010) {
+              return mov_vs_fbByDist2010[d.Country];
+            } else if (d.Date == 2011) {
+              return mov_vs_fbByDist2011[d.Country];
+            } else if (d.Date == 2012) {
+              return mov_vs_fbByDist2012[d.Country];
+            } else if (d.Date == 2013) {
+              return mov_vs_fbByDist2013[d.Country];
+            } else if (d.Date == 2014) {
+              return mov_vs_fbByDist2014[d.Country];
+            } else if (d.Date == 2015) {
+              return mov_vs_fbByDist2015[d.Country];
+            } else if (d.Date == 2016) {
+              return mov_vs_fbByDist2016[d.Country];
+            }
+            // if (inputValue == "2018") {
+            //   return mov_vs_fbByDist18[d.id];
+            // } else if (inputValue == "2020") {
+            //   return mov_vs_fbByDist20[d.id];
+            // } else if (inputValue == "2022") {
+            //   return mov_vs_fbByDist22[d.id];
+            // } else if (inputValue == "2024") {
+            //   return mov_vs_fbByDist24[d.id];
+            // }
+          }
+
+          function initialState(d) {
+            if (document.getElementById("range").innerHTML == 1982) {
+              return;
+            }
+          }
+        }
         d3.select("#timeslide").on("input", function () {
           update(+this.value);
         });
-    
+
         function update(value) {
           document.getElementById("range").innerHTML = time[value];
           inputValue = time[value];
@@ -65,8 +633,13 @@ export default function define(runtime, observer) {
         return chart;
       }
     );
-  
-  main.variable(observer("SquareMapChart")).define("SquareMapChart",["d3", "DOM", "flubber"],function (d3, DOM, flubber) {
+
+  main
+    .variable(observer("SquareMapChart"))
+    .define(
+      "SquareMapChart",
+      ["d3", "DOM", "flubber"],
+      function (d3, DOM, flubber) {
         return class SquareMapChart {
           create(classicalWorld, squaredWorld) {
             this.width = 960;
@@ -91,7 +664,6 @@ export default function define(runtime, observer) {
             this.map = this.main.append("g").attr("class", "map");
 
             this.labels = this.main.append("g").attr("class", "labels");
-            
           }
           update(state) {
             this.valueAccessor = state.valueAccessor;
@@ -177,13 +749,18 @@ export default function define(runtime, observer) {
               .enter()
               .append("path")
               .attr("d", path)
-              .style("fill", (d) =>
-                dataMapping[d.properties.iso_a2] !== undefined
-                  ? colorScale(dataMapping[d.properties.iso_a2])
-                  : "#F0F0F0" //the color of the not included countries
+              .style(
+                "fill",
+                (d) =>
+                  dataMapping[d.properties.iso_a2] !== undefined
+                    ? colorScale(dataMapping[d.properties.iso_a2])
+                    : "#F0F0F0" //the color of the not included countries
               )
               .style("stroke", "gray")
-              .style("stroke-width", 1);
+              .style("stroke-width", 1)
+              .on("mouseover", function (d) {
+                console.log(d);
+              });
             this.labels
               .selectAll("text")
               .data(this.world.features)
@@ -210,7 +787,6 @@ export default function define(runtime, observer) {
               .style("opacity", 0);
           }
 
-          
           switchToClassic() {
             this.map
               .selectAll("path")
@@ -257,2809 +833,45 @@ export default function define(runtime, observer) {
               .duration(300)
               .style("opacity", 0);
           }
-
-          
         };
       }
     );
-  
-  main.variable(observer("classicalWorld")).define("classicalWorld", ["d3"], function (d3) {
+
+  main
+    .variable(observer("classicalWorld"))
+    .define("classicalWorld", ["d3"], function (d3) {
       return d3.json(
         "https://gist.githubusercontent.com/KarimDouieb/fbd29d80918c0b16aef837680eddb865/raw/0a2243629bf4c95f1853aac2aa6e2ebdda61cd38/world.geo.json"
       );
     });
-  
-  main.variable(observer("gridWorld")).define("gridWorld", function () {
-    return [
-      {
-        name: "Afghanistan",
-        alpha2: "AF",
-        alpha3: "AFG",
-        countryCode: 4,
-        "iso3166-2": "ISO 3166-2:AF",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 22,
-        y: 8,
-      },
-      {
-        name: "Albania",
-        alpha2: "AL",
-        alpha3: "ALB",
-        countryCode: 8,
-        "iso3166-2": "ISO 3166-2:AL",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 15,
-        y: 9,
-      },
-      {
-        name: "Algeria",
-        alpha2: "DZ",
-        alpha3: "DZA",
-        countryCode: 12,
-        "iso3166-2": "ISO 3166-2:DZ",
-        region: "Africa",
-        subRegion: "Northern Africa",
-        regionCode: 2,
-        subRegionCode: 15,
-        x: 13,
-        y: 11,
-      },
-      {
-        name: "Angola",
-        alpha2: "AO",
-        alpha3: "AGO",
-        countryCode: 24,
-        "iso3166-2": "ISO 3166-2:AO",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 13,
-        y: 17,
-      },
-      {
-        name: "Antarctica",
-        alpha2: "AQ",
-        alpha3: "ATA",
-        countryCode: 10,
-        "iso3166-2": "ISO 3166-2:AQ",
-        region: "Antarctica",
-        subRegion: "NA",
-        regionCode: "NA",
-        subRegionCode: "NA",
-        x: 15,
-        y: 23,
-      },
-      {
-        name: "Antigua & Barbuda",
-        alpha2: "AG",
-        alpha3: "ATG",
-        countryCode: 28,
-        "iso3166-2": "ISO 3166-2:AG",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 7,
-        y: 4,
-      },
-      {
-        name: "Argentina",
-        alpha2: "AR",
-        alpha3: "ARG",
-        countryCode: 32,
-        "iso3166-2": "ISO 3166-2:AR",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 6,
-        y: 14,
-      },
-      {
-        name: "Armenia",
-        alpha2: "AM",
-        alpha3: "ARM",
-        countryCode: 51,
-        "iso3166-2": "ISO 3166-2:AM",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 20,
-        y: 6,
-      },
-      {
-        name: "Australia",
-        alpha2: "AU",
-        alpha3: "AUS",
-        countryCode: 36,
-        "iso3166-2": "ISO 3166-2:AU",
-        region: "Oceania",
-        subRegion: "Australia and New Zealand",
-        regionCode: 9,
-        subRegionCode: 53,
-        x: 24,
-        y: 19,
-      },
-      {
-        name: "Austria",
-        alpha2: "AT",
-        alpha3: "AUT",
-        countryCode: 40,
-        "iso3166-2": "ISO 3166-2:AT",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 15,
-        y: 6,
-      },
-      {
-        name: "Azerbaijan",
-        alpha2: "AZ",
-        alpha3: "AZE",
-        countryCode: 31,
-        "iso3166-2": "ISO 3166-2:AZ",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 21,
-        y: 7,
-      },
-      {
-        name: "Bahamas",
-        alpha2: "BS",
-        alpha3: "BHS",
-        countryCode: 44,
-        "iso3166-2": "ISO 3166-2:BS",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 4,
-        y: 2,
-      },
-      {
-        name: "Bahrain",
-        alpha2: "BH",
-        alpha3: "BHR",
-        countryCode: 48,
-        "iso3166-2": "ISO 3166-2:BH",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 20,
-        y: 9,
-      },
-      {
-        name: "Bangladesh",
-        alpha2: "BD",
-        alpha3: "BGD",
-        countryCode: 50,
-        "iso3166-2": "ISO 3166-2:BD",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 23,
-        y: 8,
-      },
-      {
-        name: "Barbados",
-        alpha2: "BB",
-        alpha3: "BRB",
-        countryCode: 52,
-        "iso3166-2": "ISO 3166-2:BB",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 8,
-        y: 6,
-      },
-      {
-        name: "Belarus",
-        alpha2: "BY",
-        alpha3: "BLR",
-        countryCode: 112,
-        "iso3166-2": "ISO 3166-2:BY",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 17,
-        y: 4,
-      },
-      {
-        name: "Belgium",
-        alpha2: "BE",
-        alpha3: "BEL",
-        countryCode: 56,
-        "iso3166-2": "ISO 3166-2:BE",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 13,
-        y: 5,
-      },
-      {
-        name: "Belize",
-        alpha2: "BZ",
-        alpha3: "BLZ",
-        countryCode: 84,
-        "iso3166-2": "ISO 3166-2:BZ",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 2,
-        y: 3,
-      },
-      {
-        name: "Benin",
-        alpha2: "BJ",
-        alpha3: "BEN",
-        countryCode: 204,
-        "iso3166-2": "ISO 3166-2:BJ",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 15,
-        y: 14,
-      },
-      {
-        name: "Bhutan",
-        alpha2: "BT",
-        alpha3: "BTN",
-        countryCode: 64,
-        "iso3166-2": "ISO 3166-2:BT",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 24,
-        y: 7,
-      },
-      {
-        name: "Bolivia",
-        alpha2: "BO",
-        alpha3: "BOL",
-        countryCode: 68,
-        "iso3166-2": "ISO 3166-2:BO",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 6,
-        y: 11,
-      },
-      {
-        name: "Bosnia & Herzegovina",
-        alpha2: "BA",
-        alpha3: "BIH",
-        countryCode: 70,
-        "iso3166-2": "ISO 3166-2:BA",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 15,
-        y: 7,
-      },
-      {
-        name: "Botswana",
-        alpha2: "BW",
-        alpha3: "BWA",
-        countryCode: 72,
-        "iso3166-2": "ISO 3166-2:BW",
-        region: "Africa",
-        subRegion: "Southern Africa",
-        regionCode: 2,
-        subRegionCode: 18,
-        x: 15,
-        y: 18,
-      },
-      {
-        name: "Brazil",
-        alpha2: "BR",
-        alpha3: "BRA",
-        countryCode: 76,
-        "iso3166-2": "ISO 3166-2:BR",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 8,
-        y: 11,
-      },
-      {
-        name: "Brunei Darussalam",
-        alpha2: "BN",
-        alpha3: "BRN",
-        countryCode: 96,
-        "iso3166-2": "ISO 3166-2:BN",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 25,
-        y: 12,
-      },
-      {
-        name: "Bulgaria",
-        alpha2: "BG",
-        alpha3: "BGR",
-        countryCode: 100,
-        "iso3166-2": "ISO 3166-2:BG",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 17,
-        y: 7,
-      },
-      {
-        name: "Burkina Faso",
-        alpha2: "BF",
-        alpha3: "BFA",
-        countryCode: 854,
-        "iso3166-2": "ISO 3166-2:BF",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 13,
-        y: 13,
-      },
-      {
-        name: "Burundi",
-        alpha2: "BI",
-        alpha3: "BDI",
-        countryCode: 108,
-        "iso3166-2": "ISO 3166-2:BI",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 15,
-        y: 16,
-      },
-      {
-        name: "Cambodia",
-        alpha2: "KH",
-        alpha3: "KHM",
-        countryCode: 116,
-        "iso3166-2": "ISO 3166-2:KH",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 25,
-        y: 10,
-      },
-      {
-        name: "Cameroon",
-        alpha2: "CM",
-        alpha3: "CMR",
-        countryCode: 120,
-        "iso3166-2": "ISO 3166-2:CM",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 14,
-        y: 15,
-      },
-      {
-        name: "Canada",
-        alpha2: "CA",
-        alpha3: "CAN",
-        countryCode: 124,
-        "iso3166-2": "ISO 3166-2:CA",
-        region: "Americas",
-        subRegion: "Northern America",
-        regionCode: 19,
-        subRegionCode: 21,
-        x: 1,
-        y: 1,
-      },
-      {
-        name: "Cabo Verde",
-        alpha2: "CV",
-        alpha3: "CPV",
-        countryCode: 132,
-        "iso3166-2": "ISO 3166-2:CV",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 10,
-        y: 15,
-      },
-      {
-        name: "Central African Republic",
-        alpha2: "CF",
-        alpha3: "CAF",
-        countryCode: 140,
-        "iso3166-2": "ISO 3166-2:CF",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 16,
-        y: 14,
-      },
-      {
-        name: "Chad",
-        alpha2: "TD",
-        alpha3: "TCD",
-        countryCode: 148,
-        "iso3166-2": "ISO 3166-2:TD",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 14,
-        y: 13,
-      },
-      {
-        name: "Chile",
-        alpha2: "CL",
-        alpha3: "CHL",
-        countryCode: 152,
-        "iso3166-2": "ISO 3166-2:CL",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 6,
-        y: 13,
-      },
-      {
-        name: "China",
-        alpha2: "CN",
-        alpha3: "CHN",
-        countryCode: 156,
-        "iso3166-2": "ISO 3166-2:CN",
-        region: "Asia",
-        subRegion: "Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 30,
-        x: 24,
-        y: 6,
-      },
-      {
-        name: "Colombia",
-        alpha2: "CO",
-        alpha3: "COL",
-        countryCode: 170,
-        "iso3166-2": "ISO 3166-2:CO",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 5,
-        y: 9,
-      },
-      {
-        name: "Comoros",
-        alpha2: "KM",
-        alpha3: "COM",
-        countryCode: 174,
-        "iso3166-2": "ISO 3166-2:KM",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 18,
-        y: 18,
-      },
-      {
-        name: "Congo",
-        alpha2: "CG",
-        alpha3: "COG",
-        countryCode: 178,
-        "iso3166-2": "ISO 3166-2:CG",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 14,
-        y: 16,
-      },
-      {
-        name: "Congo (Democratic Republic of the)",
-        alpha2: "CD",
-        alpha3: "COD",
-        countryCode: 180,
-        "iso3166-2": "ISO 3166-2:CD",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 15,
-        y: 15,
-      },
-      {
-        name: "Costa Rica",
-        alpha2: "CR",
-        alpha3: "CRI",
-        countryCode: 188,
-        "iso3166-2": "ISO 3166-2:CR",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 3,
-        y: 7,
-      },
-      {
-        name: "Côte d'Ivoire",
-        alpha2: "CI",
-        alpha3: "CIV",
-        countryCode: 384,
-        "iso3166-2": "ISO 3166-2:CI",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 12,
-        y: 15,
-      },
-      {
-        name: "Croatia",
-        alpha2: "HR",
-        alpha3: "HRV",
-        countryCode: 191,
-        "iso3166-2": "ISO 3166-2:HR",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 14,
-        y: 7,
-      },
-      {
-        name: "Cuba",
-        alpha2: "CU",
-        alpha3: "CUB",
-        countryCode: 192,
-        "iso3166-2": "ISO 3166-2:CU",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 4,
-        y: 3,
-      },
-      {
-        name: "Cyprus",
-        alpha2: "CY",
-        alpha3: "CYP",
-        countryCode: 196,
-        "iso3166-2": "ISO 3166-2:CY",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 17,
-        y: 9,
-      },
-      {
-        name: "Palestine",
-        alpha2: "PS",
-        alpha3: "PSX",
-        countryCode: 275,
-        "iso3166-2": "ISO 3166-2:PS",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: null,
-        subRegionCode: null,
-        x: 17,
-        y: 10,
-      },
-      {
-        name: "Czechia",
-        alpha2: "CZ",
-        alpha3: "CZE",
-        countryCode: 203,
-        "iso3166-2": "ISO 3166-2:CZ",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 15,
-        y: 5,
-      },
-      {
-        name: "Denmark",
-        alpha2: "DK",
-        alpha3: "DNK",
-        countryCode: 208,
-        "iso3166-2": "ISO 3166-2:DK",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 14,
-        y: 3,
-      },
-      {
-        name: "Djibouti",
-        alpha2: "DJ",
-        alpha3: "DJI",
-        countryCode: 262,
-        "iso3166-2": "ISO 3166-2:DJ",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 17,
-        y: 13,
-      },
-      {
-        name: "Dominica",
-        alpha2: "DM",
-        alpha3: "DMA",
-        countryCode: 212,
-        "iso3166-2": "ISO 3166-2:DM",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 7,
-        y: 7,
-      },
-      {
-        name: "Dominican Republic",
-        alpha2: "DO",
-        alpha3: "DOM",
-        countryCode: 214,
-        "iso3166-2": "ISO 3166-2:DO",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 6,
-        y: 4,
-      },
-      {
-        name: "Ecuador",
-        alpha2: "EC",
-        alpha3: "ECU",
-        countryCode: 218,
-        "iso3166-2": "ISO 3166-2:EC",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 5,
-        y: 10,
-      },
-      {
-        name: "Egypt",
-        alpha2: "EG",
-        alpha3: "EGY",
-        countryCode: 818,
-        "iso3166-2": "ISO 3166-2:EG",
-        region: "Africa",
-        subRegion: "Northern Africa",
-        regionCode: 2,
-        subRegionCode: 15,
-        x: 16,
-        y: 11,
-      },
-      {
-        name: "El Salvador",
-        alpha2: "SV",
-        alpha3: "SLV",
-        countryCode: 222,
-        "iso3166-2": "ISO 3166-2:SV",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 1,
-        y: 5,
-      },
-      {
-        name: "Equatorial Guinea",
-        alpha2: "GQ",
-        alpha3: "GNQ",
-        countryCode: 226,
-        "iso3166-2": "ISO 3166-2:GQ",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 13,
-        y: 16,
-      },
-      {
-        name: "Eritrea",
-        alpha2: "ER",
-        alpha3: "ERI",
-        countryCode: 232,
-        "iso3166-2": "ISO 3166-2:ER",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 16,
-        y: 13,
-      },
-      {
-        name: "Estonia",
-        alpha2: "EE",
-        alpha3: "EST",
-        countryCode: 233,
-        "iso3166-2": "ISO 3166-2:EE",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 17,
-        y: 2,
-      },
-      {
-        name: "Ethiopia",
-        alpha2: "ET",
-        alpha3: "ETH",
-        countryCode: 231,
-        "iso3166-2": "ISO 3166-2:ET",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 17,
-        y: 14,
-      },
-      {
-        name: "Fiji",
-        alpha2: "FJ",
-        alpha3: "FJI",
-        countryCode: 242,
-        "iso3166-2": "ISO 3166-2:FJ",
-        region: "Oceania",
-        subRegion: "Melanesia",
-        regionCode: 9,
-        subRegionCode: 54,
-        x: 27,
-        y: 19,
-      },
-      {
-        name: "Finland",
-        alpha2: "FI",
-        alpha3: "FIN",
-        countryCode: 246,
-        "iso3166-2": "ISO 3166-2:FI",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 17,
-        y: 1,
-      },
-      {
-        name: "France",
-        alpha2: "FR",
-        alpha3: "FRA",
-        countryCode: 250,
-        "iso3166-2": "ISO 3166-2:FR",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 12,
-        y: 5,
-      },
-      {
-        name: "Gabon",
-        alpha2: "GA",
-        alpha3: "GAB",
-        countryCode: 266,
-        "iso3166-2": "ISO 3166-2:GA",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 14,
-        y: 17,
-      },
-      {
-        name: "Gambia",
-        alpha2: "GM",
-        alpha3: "GMB",
-        countryCode: 270,
-        "iso3166-2": "ISO 3166-2:GM",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 12,
-        y: 12,
-      },
-      {
-        name: "Georgia",
-        alpha2: "GE",
-        alpha3: "GEO",
-        countryCode: 268,
-        "iso3166-2": "ISO 3166-2:GE",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 21,
-        y: 6,
-      },
-      {
-        name: "Germany",
-        alpha2: "DE",
-        alpha3: "DEU",
-        countryCode: 276,
-        "iso3166-2": "ISO 3166-2:DE",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 14,
-        y: 4,
-      },
-      {
-        name: "Ghana",
-        alpha2: "GH",
-        alpha3: "GHA",
-        countryCode: 288,
-        "iso3166-2": "ISO 3166-2:GH",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 13,
-        y: 14,
-      },
-      {
-        name: "Greece",
-        alpha2: "GR",
-        alpha3: "GRC",
-        countryCode: 300,
-        "iso3166-2": "ISO 3166-2:GR",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 16,
-        y: 9,
-      },
-      {
-        name: "Greenland",
-        alpha2: "GL",
-        alpha3: "GRL",
-        countryCode: 304,
-        "iso3166-2": "ISO 3166-2:GL",
-        region: "Americas",
-        subRegion: "Northern America",
-        regionCode: 19,
-        subRegionCode: 21,
-        x: 8,
-        y: 1,
-      },
-      {
-        name: "Grenada",
-        alpha2: "GD",
-        alpha3: "GRD",
-        countryCode: 308,
-        "iso3166-2": "ISO 3166-2:GD",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 7,
-        y: 8,
-      },
-      {
-        name: "Guatemala",
-        alpha2: "GT",
-        alpha3: "GTM",
-        countryCode: 320,
-        "iso3166-2": "ISO 3166-2:GT",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 1,
-        y: 4,
-      },
-      {
-        name: "Guinea",
-        alpha2: "GN",
-        alpha3: "GIN",
-        countryCode: 324,
-        "iso3166-2": "ISO 3166-2:GN",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 11,
-        y: 14,
-      },
-      {
-        name: "Guinea-Bissau",
-        alpha2: "GW",
-        alpha3: "GNB",
-        countryCode: 624,
-        "iso3166-2": "ISO 3166-2:GW",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 11,
-        y: 13,
-      },
-      {
-        name: "Guyana",
-        alpha2: "GY",
-        alpha3: "GUY",
-        countryCode: 328,
-        "iso3166-2": "ISO 3166-2:GY",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 6,
-        y: 10,
-      },
-      {
-        name: "Haiti",
-        alpha2: "HT",
-        alpha3: "HTI",
-        countryCode: 332,
-        "iso3166-2": "ISO 3166-2:HT",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 5,
-        y: 4,
-      },
-      {
-        name: "Honduras",
-        alpha2: "HN",
-        alpha3: "HND",
-        countryCode: 340,
-        "iso3166-2": "ISO 3166-2:HN",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 2,
-        y: 5,
-      },
-      {
-        name: "Hungary",
-        alpha2: "HU",
-        alpha3: "HUN",
-        countryCode: 348,
-        "iso3166-2": "ISO 3166-2:HU",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 16,
-        y: 6,
-      },
-      {
-        name: "Iceland",
-        alpha2: "IS",
-        alpha3: "ISL",
-        countryCode: 352,
-        "iso3166-2": "ISO 3166-2:IS",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 10,
-        y: 1,
-      },
-      {
-        name: "India",
-        alpha2: "IN",
-        alpha3: "IND",
-        countryCode: 356,
-        "iso3166-2": "ISO 3166-2:IN",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 22,
-        y: 9,
-      },
-      {
-        name: "Indonesia",
-        alpha2: "ID",
-        alpha3: "IDN",
-        countryCode: 360,
-        "iso3166-2": "ISO 3166-2:ID",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 25,
-        y: 13,
-      },
-      {
-        name: "Iran (Islamic Republic of)",
-        alpha2: "IR",
-        alpha3: "IRN",
-        countryCode: 364,
-        "iso3166-2": "ISO 3166-2:IR",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 20,
-        y: 8,
-      },
-      {
-        name: "Iraq",
-        alpha2: "IQ",
-        alpha3: "IRQ",
-        countryCode: 368,
-        "iso3166-2": "ISO 3166-2:IQ",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 20,
-        y: 7,
-      },
-      {
-        name: "Ireland",
-        alpha2: "IE",
-        alpha3: "IRL",
-        countryCode: 372,
-        "iso3166-2": "ISO 3166-2:IE",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 10,
-        y: 4,
-      },
-      {
-        name: "Israel",
-        alpha2: "IL",
-        alpha3: "ISR",
-        countryCode: 376,
-        "iso3166-2": "ISO 3166-2:IL",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 18,
-        y: 10,
-      },
-      {
-        name: "Italy",
-        alpha2: "IT",
-        alpha3: "ITA",
-        countryCode: 380,
-        "iso3166-2": "ISO 3166-2:IT",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 13,
-        y: 7,
-      },
-      {
-        name: "Jamaica",
-        alpha2: "JM",
-        alpha3: "JAM",
-        countryCode: 388,
-        "iso3166-2": "ISO 3166-2:JM",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 4,
-        y: 4,
-      },
-      {
-        name: "Japan",
-        alpha2: "JP",
-        alpha3: "JPN",
-        countryCode: 392,
-        "iso3166-2": "ISO 3166-2:JP",
-        region: "Asia",
-        subRegion: "Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 30,
-        x: 27,
-        y: 6,
-      },
-      {
-        name: "Jordan",
-        alpha2: "JO",
-        alpha3: "JOR",
-        countryCode: 400,
-        "iso3166-2": "ISO 3166-2:JO",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 18,
-        y: 8,
-      },
-      {
-        name: "Kazakhstan",
-        alpha2: "KZ",
-        alpha3: "KAZ",
-        countryCode: 398,
-        "iso3166-2": "ISO 3166-2:KZ",
-        region: "Asia",
-        subRegion: "Central Asia",
-        regionCode: 142,
-        subRegionCode: 143,
-        x: 24,
-        y: 5,
-      },
-      {
-        name: "Kenya",
-        alpha2: "KE",
-        alpha3: "KEN",
-        countryCode: 404,
-        "iso3166-2": "ISO 3166-2:KE",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 17,
-        y: 15,
-      },
-      {
-        name: "Kiribati",
-        alpha2: "KI",
-        alpha3: "KIR",
-        countryCode: 296,
-        "iso3166-2": "ISO 3166-2:KI",
-        region: "Oceania",
-        subRegion: "Micronesia",
-        regionCode: 9,
-        subRegionCode: 57,
-        x: 27,
-        y: 17,
-      },
-      {
-        name: "North Korea",
-        alpha2: "KP",
-        alpha3: "PRK",
-        countryCode: 408,
-        "iso3166-2": "ISO 3166-2:KP",
-        region: "Asia",
-        subRegion: "Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 30,
-        x: 25,
-        y: 6,
-      },
-      {
-        name: "South Korea",
-        alpha2: "KR",
-        alpha3: "KOR",
-        countryCode: 410,
-        "iso3166-2": "ISO 3166-2:KR",
-        region: "Asia",
-        subRegion: "Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 30,
-        x: 25,
-        y: 7,
-      },
-      {
-        name: "Kosovo",
-        alpha2: "XK",
-        alpha3: "XKX",
-        countryCode: 383,
-        "iso3166-2": "ISO 3166-2:XK",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 142,
-        subRegionCode: 30,
-        x: 16,
-        y: 8,
-      },
-      {
-        name: "Kuwait",
-        alpha2: "KW",
-        alpha3: "KWT",
-        countryCode: 414,
-        "iso3166-2": "ISO 3166-2:KW",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 19,
-        y: 8,
-      },
-      {
-        name: "Kyrgyzstan",
-        alpha2: "KG",
-        alpha3: "KGZ",
-        countryCode: 417,
-        "iso3166-2": "ISO 3166-2:KG",
-        region: "Asia",
-        subRegion: "Central Asia",
-        regionCode: 142,
-        subRegionCode: 143,
-        x: 23,
-        y: 6,
-      },
-      {
-        name: "Lao People's Democratic Republic",
-        alpha2: "LA",
-        alpha3: "LAO",
-        countryCode: 418,
-        "iso3166-2": "ISO 3166-2:LA",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 25,
-        y: 9,
-      },
-      {
-        name: "Latvia",
-        alpha2: "LV",
-        alpha3: "LVA",
-        countryCode: 428,
-        "iso3166-2": "ISO 3166-2:LV",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 17,
-        y: 3,
-      },
-      {
-        name: "Lebanon",
-        alpha2: "LB",
-        alpha3: "LBN",
-        countryCode: 422,
-        "iso3166-2": "ISO 3166-2:LB",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 18,
-        y: 9,
-      },
-      {
-        name: "Lesotho",
-        alpha2: "LS",
-        alpha3: "LSO",
-        countryCode: 426,
-        "iso3166-2": "ISO 3166-2:LS",
-        region: "Africa",
-        subRegion: "Southern Africa",
-        regionCode: 2,
-        subRegionCode: 18,
-        x: 17,
-        y: 19,
-      },
-      {
-        name: "Liberia",
-        alpha2: "LR",
-        alpha3: "LBR",
-        countryCode: 430,
-        "iso3166-2": "ISO 3166-2:LR",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 12,
-        y: 14,
-      },
-      {
-        name: "Libya",
-        alpha2: "LY",
-        alpha3: "LBY",
-        countryCode: 434,
-        "iso3166-2": "ISO 3166-2:LY",
-        region: "Africa",
-        subRegion: "Northern Africa",
-        regionCode: 2,
-        subRegionCode: 15,
-        x: 15,
-        y: 11,
-      },
-      {
-        name: "Lithuania",
-        alpha2: "LT",
-        alpha3: "LTU",
-        countryCode: 440,
-        "iso3166-2": "ISO 3166-2:LT",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 16,
-        y: 4,
-      },
-      {
-        name: "Luxembourg",
-        alpha2: "LU",
-        alpha3: "LUX",
-        countryCode: 442,
-        "iso3166-2": "ISO 3166-2:LU",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 13,
-        y: 6,
-      },
-      {
-        name: "Macedonia",
-        alpha2: "MK",
-        alpha3: "MKD",
-        countryCode: 807,
-        "iso3166-2": "ISO 3166-2:MK",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 17,
-        y: 8,
-      },
-      {
-        name: "Madagascar",
-        alpha2: "MG",
-        alpha3: "MDG",
-        countryCode: 450,
-        "iso3166-2": "ISO 3166-2:MG",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 19,
-        y: 19,
-      },
-      {
-        name: "Malawi",
-        alpha2: "MW",
-        alpha3: "MWI",
-        countryCode: 454,
-        "iso3166-2": "ISO 3166-2:MW",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 15,
-        y: 17,
-      },
-      {
-        name: "Malaysia",
-        alpha2: "MY",
-        alpha3: "MYS",
-        countryCode: 458,
-        "iso3166-2": "ISO 3166-2:MY",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 24,
-        y: 11,
-      },
-      {
-        name: "Maldives",
-        alpha2: "MV",
-        alpha3: "MDV",
-        countryCode: 462,
-        "iso3166-2": "ISO 3166-2:MV",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 21,
-        y: 12,
-      },
-      {
-        name: "Mali",
-        alpha2: "ML",
-        alpha3: "MLI",
-        countryCode: 466,
-        "iso3166-2": "ISO 3166-2:ML",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 14,
-        y: 12,
-      },
-      {
-        name: "Malta",
-        alpha2: "MT",
-        alpha3: "MLT",
-        countryCode: 470,
-        "iso3166-2": "ISO 3166-2:MT",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 11,
-        y: 8,
-      },
-      {
-        name: "Marshall Islands",
-        alpha2: "MH",
-        alpha3: "MHL",
-        countryCode: 584,
-        "iso3166-2": "ISO 3166-2:MH",
-        region: "Oceania",
-        subRegion: "Micronesia",
-        regionCode: 9,
-        subRegionCode: 57,
-        x: 26,
-        y: 15,
-      },
-      {
-        name: "Mauritania",
-        alpha2: "MR",
-        alpha3: "MRT",
-        countryCode: 478,
-        "iso3166-2": "ISO 3166-2:MR",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 11,
-        y: 12,
-      },
-      {
-        name: "Mauritius",
-        alpha2: "MU",
-        alpha3: "MUS",
-        countryCode: 480,
-        "iso3166-2": "ISO 3166-2:MU",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 19,
-        y: 20,
-      },
-      {
-        name: "Mexico",
-        alpha2: "MX",
-        alpha3: "MEX",
-        countryCode: 484,
-        "iso3166-2": "ISO 3166-2:MX",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 1,
-        y: 3,
-      },
-      {
-        name: "Micronesia (Federated States of)",
-        alpha2: "FM",
-        alpha3: "FSM",
-        countryCode: 583,
-        "iso3166-2": "ISO 3166-2:FM",
-        region: "Oceania",
-        subRegion: "Micronesia",
-        regionCode: 9,
-        subRegionCode: 57,
-        x: 26,
-        y: 16,
-      },
-      {
-        name: "Moldova (Republic of)",
-        alpha2: "MD",
-        alpha3: "MDA",
-        countryCode: 498,
-        "iso3166-2": "ISO 3166-2:MD",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 18,
-        y: 5,
-      },
-      {
-        name: "Mongolia",
-        alpha2: "MN",
-        alpha3: "MNG",
-        countryCode: 496,
-        "iso3166-2": "ISO 3166-2:MN",
-        region: "Asia",
-        subRegion: "Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 30,
-        x: 25,
-        y: 5,
-      },
-      {
-        name: "Montenegro",
-        alpha2: "ME",
-        alpha3: "MNE",
-        countryCode: 499,
-        "iso3166-2": "ISO 3166-2:ME",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 15,
-        y: 8,
-      },
-      {
-        name: "Morocco",
-        alpha2: "MA",
-        alpha3: "MAR",
-        countryCode: 504,
-        "iso3166-2": "ISO 3166-2:MA",
-        region: "Africa",
-        subRegion: "Northern Africa",
-        regionCode: 2,
-        subRegionCode: 15,
-        x: 12,
-        y: 11,
-      },
-      {
-        name: "Mozambique",
-        alpha2: "MZ",
-        alpha3: "MOZ",
-        countryCode: 508,
-        "iso3166-2": "ISO 3166-2:MZ",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 16,
-        y: 17,
-      },
-      {
-        name: "Myanmar",
-        alpha2: "MM",
-        alpha3: "MMR",
-        countryCode: 104,
-        "iso3166-2": "ISO 3166-2:MM",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 24,
-        y: 8,
-      },
-      {
-        name: "Namibia",
-        alpha2: "NA",
-        alpha3: "NAM",
-        countryCode: 516,
-        "iso3166-2": "ISO 3166-2:NA",
-        region: "Africa",
-        subRegion: "Southern Africa",
-        regionCode: 2,
-        subRegionCode: 18,
-        x: 15,
-        y: 19,
-      },
-      {
-        name: "Nauru",
-        alpha2: "NR",
-        alpha3: "NRU",
-        countryCode: 520,
-        "iso3166-2": "ISO 3166-2:NR",
-        region: "Oceania",
-        subRegion: "Micronesia",
-        regionCode: 9,
-        subRegionCode: 57,
-        x: 26,
-        y: 17,
-      },
-      {
-        name: "Nepal",
-        alpha2: "NP",
-        alpha3: "NPL",
-        countryCode: 524,
-        "iso3166-2": "ISO 3166-2:NP",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 23,
-        y: 9,
-      },
-      {
-        name: "Netherlands",
-        alpha2: "NL",
-        alpha3: "NLD",
-        countryCode: 528,
-        "iso3166-2": "ISO 3166-2:NL",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 13,
-        y: 4,
-      },
-      {
-        name: "New Zealand",
-        alpha2: "NZ",
-        alpha3: "NZL",
-        countryCode: 554,
-        "iso3166-2": "ISO 3166-2:NZ",
-        region: "Oceania",
-        subRegion: "Australia and New Zealand",
-        regionCode: 9,
-        subRegionCode: 53,
-        x: 26,
-        y: 21,
-      },
-      {
-        name: "Nicaragua",
-        alpha2: "NI",
-        alpha3: "NIC",
-        countryCode: 558,
-        "iso3166-2": "ISO 3166-2:NI",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 2,
-        y: 6,
-      },
-      {
-        name: "Niger",
-        alpha2: "NE",
-        alpha3: "NER",
-        countryCode: 562,
-        "iso3166-2": "ISO 3166-2:NE",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 15,
-        y: 12,
-      },
-      {
-        name: "Nigeria",
-        alpha2: "NG",
-        alpha3: "NGA",
-        countryCode: 566,
-        "iso3166-2": "ISO 3166-2:NG",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 13,
-        y: 15,
-      },
-      {
-        name: "Norway",
-        alpha2: "NO",
-        alpha3: "NOR",
-        countryCode: 578,
-        "iso3166-2": "ISO 3166-2:NO",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 15,
-        y: 1,
-      },
-      {
-        name: "Oman",
-        alpha2: "OM",
-        alpha3: "OMN",
-        countryCode: 512,
-        "iso3166-2": "ISO 3166-2:OM",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 19,
-        y: 11,
-      },
-      {
-        name: "Pakistan",
-        alpha2: "PK",
-        alpha3: "PAK",
-        countryCode: 586,
-        "iso3166-2": "ISO 3166-2:PK",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 21,
-        y: 8,
-      },
-      {
-        name: "Palau",
-        alpha2: "PW",
-        alpha3: "PLW",
-        countryCode: 585,
-        "iso3166-2": "ISO 3166-2:PW",
-        region: "Oceania",
-        subRegion: "Micronesia",
-        regionCode: 9,
-        subRegionCode: 57,
-        x: 25,
-        y: 16,
-      },
-      {
-        name: "Panama",
-        alpha2: "PA",
-        alpha3: "PAN",
-        countryCode: 591,
-        "iso3166-2": "ISO 3166-2:PA",
-        region: "Americas",
-        subRegion: "Central America",
-        regionCode: 19,
-        subRegionCode: 13,
-        x: 4,
-        y: 8,
-      },
-      {
-        name: "Papua New Guinea",
-        alpha2: "PG",
-        alpha3: "PNG",
-        countryCode: 598,
-        "iso3166-2": "ISO 3166-2:PG",
-        region: "Oceania",
-        subRegion: "Melanesia",
-        regionCode: 9,
-        subRegionCode: 54,
-        x: 25,
-        y: 17,
-      },
-      {
-        name: "Paraguay",
-        alpha2: "PY",
-        alpha3: "PRY",
-        countryCode: 600,
-        "iso3166-2": "ISO 3166-2:PY",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 6,
-        y: 12,
-      },
-      {
-        name: "Peru",
-        alpha2: "PE",
-        alpha3: "PER",
-        countryCode: 604,
-        "iso3166-2": "ISO 3166-2:PE",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 5,
-        y: 11,
-      },
-      {
-        name: "Philippines",
-        alpha2: "PH",
-        alpha3: "PHL",
-        countryCode: 608,
-        "iso3166-2": "ISO 3166-2:PH",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 26,
-        y: 11,
-      },
-      {
-        name: "Poland",
-        alpha2: "PL",
-        alpha3: "POL",
-        countryCode: 616,
-        "iso3166-2": "ISO 3166-2:PL",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 15,
-        y: 4,
-      },
-      {
-        name: "Portugal",
-        alpha2: "PT",
-        alpha3: "PRT",
-        countryCode: 620,
-        "iso3166-2": "ISO 3166-2:PT",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 11,
-        y: 6,
-      },
-      {
-        name: "Qatar",
-        alpha2: "QA",
-        alpha3: "QAT",
-        countryCode: 634,
-        "iso3166-2": "ISO 3166-2:QA",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 19,
-        y: 10,
-      },
-      {
-        name: "Romania",
-        alpha2: "RO",
-        alpha3: "ROU",
-        countryCode: 642,
-        "iso3166-2": "ISO 3166-2:RO",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 17,
-        y: 6,
-      },
-      {
-        name: "Russian Federation",
-        alpha2: "RU",
-        alpha3: "RUS",
-        countryCode: 643,
-        "iso3166-2": "ISO 3166-2:RU",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 25,
-        y: 4,
-      },
-      {
-        name: "Rwanda",
-        alpha2: "RW",
-        alpha3: "RWA",
-        countryCode: 646,
-        "iso3166-2": "ISO 3166-2:RW",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 16,
-        y: 16,
-      },
-      {
-        name: "St. Kitts & Nevis",
-        alpha2: "KN",
-        alpha3: "KNA",
-        countryCode: 659,
-        "iso3166-2": "ISO 3166-2:KN",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 6,
-        y: 5,
-      },
-      {
-        name: "St. Lucia",
-        alpha2: "LC",
-        alpha3: "LCA",
-        countryCode: 662,
-        "iso3166-2": "ISO 3166-2:LC",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 7,
-        y: 5,
-      },
-      {
-        name: "St. Vincent & the Grenadines",
-        alpha2: "VC",
-        alpha3: "VCT",
-        countryCode: 670,
-        "iso3166-2": "ISO 3166-2:VC",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 7,
-        y: 6,
-      },
-      {
-        name: "Samoa",
-        alpha2: "WS",
-        alpha3: "WSM",
-        countryCode: 882,
-        "iso3166-2": "ISO 3166-2:WS",
-        region: "Oceania",
-        subRegion: "Polynesia",
-        regionCode: 9,
-        subRegionCode: 61,
-        x: 28,
-        y: 18,
-      },
-      {
-        name: "Sao Tome and Principe",
-        alpha2: "ST",
-        alpha3: "STP",
-        countryCode: 678,
-        "iso3166-2": "ISO 3166-2:ST",
-        region: "Africa",
-        subRegion: "Middle Africa",
-        regionCode: 2,
-        subRegionCode: 17,
-        x: 11,
-        y: 16,
-      },
-      {
-        name: "Saudi Arabia",
-        alpha2: "SA",
-        alpha3: "SAU",
-        countryCode: 682,
-        "iso3166-2": "ISO 3166-2:SA",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 19,
-        y: 9,
-      },
-      {
-        name: "Senegal",
-        alpha2: "SN",
-        alpha3: "SEN",
-        countryCode: 686,
-        "iso3166-2": "ISO 3166-2:SN",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 13,
-        y: 12,
-      },
-      {
-        name: "Serbia",
-        alpha2: "RS",
-        alpha3: "SRB",
-        countryCode: 688,
-        "iso3166-2": "ISO 3166-2:RS",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 16,
-        y: 7,
-      },
-      {
-        name: "Seychelles",
-        alpha2: "SC",
-        alpha3: "SYC",
-        countryCode: 690,
-        "iso3166-2": "ISO 3166-2:SC",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 18,
-        y: 17,
-      },
-      {
-        name: "Sierra Leone",
-        alpha2: "SL",
-        alpha3: "SLE",
-        countryCode: 694,
-        "iso3166-2": "ISO 3166-2:SL",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 12,
-        y: 13,
-      },
-      {
-        name: "Singapore",
-        alpha2: "SG",
-        alpha3: "SGP",
-        countryCode: 702,
-        "iso3166-2": "ISO 3166-2:SG",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 24,
-        y: 13,
-      },
-      {
-        name: "Slovakia",
-        alpha2: "SK",
-        alpha3: "SVK",
-        countryCode: 703,
-        "iso3166-2": "ISO 3166-2:SK",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 16,
-        y: 5,
-      },
-      {
-        name: "Slovenia",
-        alpha2: "SI",
-        alpha3: "SVN",
-        countryCode: 705,
-        "iso3166-2": "ISO 3166-2:SI",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 14,
-        y: 6,
-      },
-      {
-        name: "Solomon Islands",
-        alpha2: "SB",
-        alpha3: "SLB",
-        countryCode: 90,
-        "iso3166-2": "ISO 3166-2:SB",
-        region: "Oceania",
-        subRegion: "Melanesia",
-        regionCode: 9,
-        subRegionCode: 54,
-        x: 26,
-        y: 18,
-      },
-      {
-        name: "Somalia",
-        alpha2: "SO",
-        alpha3: "SOM",
-        countryCode: 706,
-        "iso3166-2": "ISO 3166-2:SO",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 18,
-        y: 14,
-      },
-      {
-        name: "South Africa",
-        alpha2: "ZA",
-        alpha3: "ZAF",
-        countryCode: 710,
-        "iso3166-2": "ISO 3166-2:ZA",
-        region: "Africa",
-        subRegion: "Southern Africa",
-        regionCode: 2,
-        subRegionCode: 18,
-        x: 16,
-        y: 20,
-      },
-      {
-        name: "South Sudan",
-        alpha2: "SS",
-        alpha3: "SSD",
-        countryCode: 728,
-        "iso3166-2": "ISO 3166-2:SS",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 15,
-        y: 13,
-      },
-      {
-        name: "Spain",
-        alpha2: "ES",
-        alpha3: "ESP",
-        countryCode: 724,
-        "iso3166-2": "ISO 3166-2:ES",
-        region: "Europe",
-        subRegion: "Southern Europe",
-        regionCode: 150,
-        subRegionCode: 39,
-        x: 12,
-        y: 6,
-      },
-      {
-        name: "Sri Lanka",
-        alpha2: "LK",
-        alpha3: "LKA",
-        countryCode: 144,
-        "iso3166-2": "ISO 3166-2:LK",
-        region: "Asia",
-        subRegion: "Southern Asia",
-        regionCode: 142,
-        subRegionCode: 34,
-        x: 22,
-        y: 11,
-      },
-      {
-        name: "Sweden",
-        alpha2: "SD",
-        alpha3: "SDN",
-        countryCode: 729,
-        "iso3166-2": "ISO 3166-2:SD",
-        region: "Africa",
-        subRegion: "Northern Africa",
-        regionCode: 2,
-        subRegionCode: 15,
-        x: 16,
-        y: 12,
-      },
-      {
-        name: "Suriname",
-        alpha2: "SR",
-        alpha3: "SUR",
-        countryCode: 740,
-        "iso3166-2": "ISO 3166-2:SR",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 7,
-        y: 11,
-      },
-      {
-        name: "Swaziland",
-        alpha2: "SZ",
-        alpha3: "SWZ",
-        countryCode: 748,
-        "iso3166-2": "ISO 3166-2:SZ",
-        region: "Africa",
-        subRegion: "Southern Africa",
-        regionCode: 2,
-        subRegionCode: 18,
-        x: 16,
-        y: 19,
-      },
-      {
-        name: "Sweden",
-        alpha2: "SE",
-        alpha3: "SWE",
-        countryCode: 752,
-        "iso3166-2": "ISO 3166-2:SE",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 16,
-        y: 1,
-      },
-      {
-        name: "Switzerland",
-        alpha2: "CH",
-        alpha3: "CHE",
-        countryCode: 756,
-        "iso3166-2": "ISO 3166-2:CH",
-        region: "Europe",
-        subRegion: "Western Europe",
-        regionCode: 150,
-        subRegionCode: 155,
-        x: 14,
-        y: 5,
-      },
-      {
-        name: "Syria",
-        alpha2: "SY",
-        alpha3: "SYR",
-        countryCode: 760,
-        "iso3166-2": "ISO 3166-2:SY",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 19,
-        y: 7,
-      },
-      {
-        name: "Tajikistan",
-        alpha2: "TJ",
-        alpha3: "TJK",
-        countryCode: 762,
-        "iso3166-2": "ISO 3166-2:TJ",
-        region: "Asia",
-        subRegion: "Central Asia",
-        regionCode: 142,
-        subRegionCode: 143,
-        x: 23,
-        y: 7,
-      },
-      {
-        name: "Tanzania",
-        alpha2: "TZ",
-        alpha3: "TZA",
-        countryCode: 834,
-        "iso3166-2": "ISO 3166-2:TZ",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 17,
-        y: 16,
-      },
-      {
-        name: "Thailand",
-        alpha2: "TH",
-        alpha3: "THA",
-        countryCode: 764,
-        "iso3166-2": "ISO 3166-2:TH",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 24,
-        y: 10,
-      },
-      {
-        name: "Timor-Leste",
-        alpha2: "TL",
-        alpha3: "TLS",
-        countryCode: 626,
-        "iso3166-2": "ISO 3166-2:TL",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 25,
-        y: 14,
-      },
-      {
-        name: "Togo",
-        alpha2: "TG",
-        alpha3: "TGO",
-        countryCode: 768,
-        "iso3166-2": "ISO 3166-2:TG",
-        region: "Africa",
-        subRegion: "Western Africa",
-        regionCode: 2,
-        subRegionCode: 11,
-        x: 14,
-        y: 14,
-      },
-      {
-        name: "Tonga",
-        alpha2: "TO",
-        alpha3: "TON",
-        countryCode: 776,
-        "iso3166-2": "ISO 3166-2:TO",
-        region: "Oceania",
-        subRegion: "Polynesia",
-        regionCode: 9,
-        subRegionCode: 61,
-        x: 28,
-        y: 19,
-      },
-      {
-        name: "Trinidad & Tobago",
-        alpha2: "TT",
-        alpha3: "TTO",
-        countryCode: 780,
-        "iso3166-2": "ISO 3166-2:TT",
-        region: "Americas",
-        subRegion: "Caribbean",
-        regionCode: 19,
-        subRegionCode: 29,
-        x: 7,
-        y: 9,
-      },
-      {
-        name: "Tunisia",
-        alpha2: "TN",
-        alpha3: "TUN",
-        countryCode: 788,
-        "iso3166-2": "ISO 3166-2:TN",
-        region: "Africa",
-        subRegion: "Northern Africa",
-        regionCode: 2,
-        subRegionCode: 15,
-        x: 14,
-        y: 11,
-      },
-      {
-        name: "Turkey",
-        alpha2: "TR",
-        alpha3: "TUR",
-        countryCode: 792,
-        "iso3166-2": "ISO 3166-2:TR",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 18,
-        y: 7,
-      },
-      {
-        name: "Turkmenistan",
-        alpha2: "TM",
-        alpha3: "TKM",
-        countryCode: 795,
-        "iso3166-2": "ISO 3166-2:TM",
-        region: "Asia",
-        subRegion: "Central Asia",
-        regionCode: 142,
-        subRegionCode: 143,
-        x: 22,
-        y: 7,
-      },
-      {
-        name: "Tuvalu",
-        alpha2: "TV",
-        alpha3: "TUV",
-        countryCode: 798,
-        "iso3166-2": "ISO 3166-2:TV",
-        region: "Oceania",
-        subRegion: "Polynesia",
-        regionCode: 9,
-        subRegionCode: 61,
-        x: 27,
-        y: 18,
-      },
-      {
-        name: "Uganda",
-        alpha2: "UG",
-        alpha3: "UGA",
-        countryCode: 800,
-        "iso3166-2": "ISO 3166-2:UG",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 16,
-        y: 15,
-      },
-      {
-        name: "Ukraine",
-        alpha2: "UA",
-        alpha3: "UKR",
-        countryCode: 804,
-        "iso3166-2": "ISO 3166-2:UA",
-        region: "Europe",
-        subRegion: "Eastern Europe",
-        regionCode: 150,
-        subRegionCode: 151,
-        x: 17,
-        y: 5,
-      },
-      {
-        name: "United Arab Emirates",
-        alpha2: "AE",
-        alpha3: "ARE",
-        countryCode: 784,
-        "iso3166-2": "ISO 3166-2:AE",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 20,
-        y: 10,
-      },
-      {
-        name: "United Kingdom",
-        alpha2: "GB",
-        alpha3: "GBR",
-        countryCode: 826,
-        "iso3166-2": "ISO 3166-2:GB",
-        region: "Europe",
-        subRegion: "Northern Europe",
-        regionCode: 150,
-        subRegionCode: 154,
-        x: 11,
-        y: 4,
-      },
-      {
-        name: "United States",
-        alpha2: "US",
-        alpha3: "USA",
-        countryCode: 840,
-        "iso3166-2": "ISO 3166-2:US",
-        region: "Americas",
-        subRegion: "Northern America",
-        regionCode: 19,
-        subRegionCode: 21,
-        x: 1,
-        y: 2,
-      },
-      {
-        name: "Uruguay",
-        alpha2: "UY",
-        alpha3: "URY",
-        countryCode: 858,
-        "iso3166-2": "ISO 3166-2:UY",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 7,
-        y: 12,
-      },
-      {
-        name: "Uzbekistan",
-        alpha2: "UZ",
-        alpha3: "UZB",
-        countryCode: 860,
-        "iso3166-2": "ISO 3166-2:UZ",
-        region: "Asia",
-        subRegion: "Central Asia",
-        regionCode: 142,
-        subRegionCode: 143,
-        x: 22,
-        y: 6,
-      },
-      {
-        name: "Vanuatu",
-        alpha2: "VU",
-        alpha3: "VUT",
-        countryCode: 548,
-        "iso3166-2": "ISO 3166-2:VU",
-        region: "Oceania",
-        subRegion: "Melanesia",
-        regionCode: 9,
-        subRegionCode: 54,
-        x: 26,
-        y: 19,
-      },
-      {
-        name: "Venezuela",
-        alpha2: "VE",
-        alpha3: "VEN",
-        countryCode: 862,
-        "iso3166-2": "ISO 3166-2:VE",
-        region: "Americas",
-        subRegion: "South America",
-        regionCode: 19,
-        subRegionCode: 5,
-        x: 6,
-        y: 9,
-      },
-      {
-        name: "Viet Nam",
-        alpha2: "VN",
-        alpha3: "VNM",
-        countryCode: 704,
-        "iso3166-2": "ISO 3166-2:VN",
-        region: "Asia",
-        subRegion: "South-Eastern Asia",
-        regionCode: 142,
-        subRegionCode: 35,
-        x: 26,
-        y: 9,
-      },
-      {
-        name: "Yemen",
-        alpha2: "YE",
-        alpha3: "YEM",
-        countryCode: 887,
-        "iso3166-2": "ISO 3166-2:YE",
-        region: "Asia",
-        subRegion: "Western Asia",
-        regionCode: 142,
-        subRegionCode: 145,
-        x: 18,
-        y: 11,
-      },
-      {
-        name: "Zambia",
-        alpha2: "ZM",
-        alpha3: "ZMB",
-        countryCode: 894,
-        "iso3166-2": "ISO 3166-2:ZM",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 14,
-        y: 18,
-      },
-      {
-        name: "Zimbabwe",
-        alpha2: "ZW",
-        alpha3: "ZWE",
-        countryCode: 716,
-        "iso3166-2": "ISO 3166-2:ZW",
-        region: "Africa",
-        subRegion: "Eastern Africa",
-        regionCode: 2,
-        subRegionCode: 14,
-        x: 16,
-        y: 18,
-      },
-    ];
-  });
- 
-  main.variable(observer("countryData")).define("countryData", function () {
-    return [
-      {
-        Country: "Argentina",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Armenia",
-        Amount: 19,
-        Date: 2016,
-      },
-      {
-        Country: "Australia",
-        Amount: 529,
-        Date: 2016,
-      },
-      {
-        Country: "Austria",
-        Amount: 76,
-        Date: 2016,
-      },
-      {
-        Country: "Belarus",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Belgium",
-        Amount: 99,
-        Date: 2016,
-      },
-      {
-        Country: "Brazil",
-        Amount: 399,
-        Date: 2016,
-      },
-      {
-        Country: "Bulgaria",
-        Amount: 25,
-        Date: 2016,
-      },
-      {
-        Country: "Canada",
-        Amount: 741,
-        Date: 2016,
-      },
-      {
-        Country: "Cura√ßao",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Cyprus",
-        Amount: 45,
-        Date: 2016,
-      },
-      {
-        Country: "Czechia",
-        Amount: 4,
-        Date: 2016,
-      },
-      {
-        Country: "Denmark",
-        Amount: 25,
-        Date: 2016,
-      },
-      {
-        Country: "Finland",
-        Amount: 19,
-        Date: 2016,
-      },
-      {
-        Country: "France",
-        Amount: 134,
-        Date: 2016,
-      },
-      {
-        Country: "Georgia",
-        Amount: 6,
-        Date: 2016,
-      },
-      {
-        Country: "Germany",
-        Amount: 804,
-        Date: 2016,
-      },
-      {
-        Country: "Ghana",
-        Amount: 7,
-        Date: 2016,
-      },
-      {
-        Country: "Greece",
-        Amount: 16,
-        Date: 2016,
-      },
-      {
-        Country: "Hungary",
-        Amount: 7,
-        Date: 2016,
-      },
-      {
-        Country: "Ireland",
-        Amount: 13,
-        Date: 2016,
-      },
-      {
-        Country: "Israel",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Italy",
-        Amount: 349,
-        Date: 2016,
-      },
-      {
-        Country: "Jordan",
-        Amount: 3,
-        Date: 2016,
-      },
-      {
-        Country: "Kuwait",
-        Amount: 5,
-        Date: 2016,
-      },
-      {
-        Country: "Luxembourg",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Malaysia",
-        Amount: 5,
-        Date: 2016,
-      },
-      {
-        Country: "Malta",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Mauritania",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Mexico",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Nauru",
-        Amount: 10,
-        Date: 2016,
-      },
-      {
-        Country: "Netherlands",
-        Amount: 32,
-        Date: 2016,
-      },
-      {
-        Country: "New Zealand",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Nigeria",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Norway",
-        Amount: 40,
-        Date: 2016,
-      },
-      {
-        Country: "Peru",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Philippines",
-        Amount: 1,
-        Date: 2016,
-      },
-      {
-        Country: "Poland",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Romania",
-        Amount: 5,
-        Date: 2016,
-      },
-      {
-        Country: "Russian Federation",
-        Amount: 7,
-        Date: 2016,
-      },
-      {
-        Country: "Serbia",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "South Africa",
-        Amount: 2,
-        Date: 2016,
-      },
-      {
-        Country: "Spain",
-        Amount: 10,
-        Date: 2016,
-      },
-      {
-        Country: "Sweden",
-        Amount: 638,
-        Date: 2016,
-      },
-      {
-        Country: "Switzerland",
-        Amount: 44,
-        Date: 2016,
-      },
-      {
-        Country: "Syria",
-        Amount: 27,
-        Date: 2016,
-      },
-      {
-        Country: "Turkey",
-        Amount: 13,
-        Date: 2016,
-      },
-      {
-        Country: "Ukraine",
-        Amount: 9,
-        Date: 2016,
-      },
-      {
-        Country: "United Kingdom",
-        Amount: 129,
-        Date: 2016,
-      },
-      {
-        Country: "United States",
-        Amount: 404,
-        Date: 2016,
-      },
-      {
-        Country: "Venezuela",
-        Amount: 12,
-        Date: 2016,
-      },
-      {
-        Country: "Zambia",
-        Amount: 6,
-        Date: 2016,
-      },
-      {
-        Country: "Zimbabwe",
-        Amount: 1,
-        Date: 2016,
-      },
-    ];
-  });
- 
+
+  main
+    .variable(observer("gridWorld"))
+    .define("gridWorld", ["d3"], function (d3) {
+      return d3.json("data_files/countries.json");
+    });
+
+  main
+    .variable(observer("countryData"))
+    .define("countryData", ["d3"], function (d3) {
+      return d3.json("data_files/immigrants.json");
+    });
+
   main.variable(observer("d3")).define("d3", ["require"], function (require) {
     return require("https://d3js.org/d3.v5.min.js");
   });
- 
-  main.variable(observer("flubber")).define("flubber", ["require"], function (require) {
+
+  main
+    .variable(observer("topojson"))
+    .define("topojson", ["require"], function (require) {
+      return require("topojson-client@3");
+    });
+
+  main
+    .variable(observer("flubber"))
+    .define("flubber", ["require"], function (require) {
       return require("https://unpkg.com/flubber");
     });
-  
+
   return main;
 }
