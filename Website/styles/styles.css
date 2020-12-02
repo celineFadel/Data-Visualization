@@ -1,3 +1,8 @@
+
+.section{    
+  width: 90vw !important;
+  margin: auto !important;
+}
 :root {
     --main-border-color: #E6EAEA;
     --main-light-blue-color: lightskyblue;
@@ -30,13 +35,17 @@ body{
   display: inline;
 }
 .main-navbar{
-min-height: 40px; 
-border-bottom: 1px solid #e0e0e0;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-padding: 10px 5vw;
-align-items: center;
+  background-color: whitesmoke;
+  z-index: 99;
+  align-items: center;
+  position: relative;
+  height: 40px; 
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 5vw;
+  align-items: center;
 }
 .main-navbar .nav-text{
   font-weight: bold;
@@ -91,9 +100,7 @@ align-items: center;
 }
 
 /* section and title */
-.section{
-  margin: 20px 0;
-}
+
 .middle-title{
   text-align: center;
   font-size: 2rem;
@@ -103,7 +110,7 @@ align-items: center;
   border-top: 3px solid var(--main-blue);
   border-bottom: 3px solid var(--main-blue);
   width: fit-content;
-  margin: auto;
+  margin: 10px auto;
 }
 .bisection{
   margin: 20px 5vw;
@@ -114,7 +121,13 @@ align-items: center;
   justify-content: space-evenly;
 
 }
-
+.very-big{
+font-size: 5rem;   
+ flex-direction: column;
+justify-content: center;
+height: 100%;
+display: flex;
+}
 /* footer */
 .main-footer{
   border-top: 1px solid #e0e0e0;
@@ -125,4 +138,8 @@ align-items: center;
   width: 100%;
   padding: 5px;
   bottom: 0;
+}
+.to-fix-section{
+  width: 90vw;
+  height: 80vh;
 }

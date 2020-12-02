@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,70 +13,72 @@
       <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&family=Nerko+One&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
       <!-- Font awesome -->
-      <script src="https://kit.fontawesome.com/17cb6aff10.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
       <title>Home</title>
+      <!-- Full scroll story -->
+      <link rel="stylesheet" type="text/css" href="./node_modules/fullpage.js/dist/fullpage.css" />
+      <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
+      <script src="./node_modules/fullpage.js/vendors/easings.min.js"></script> 
+      <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+      <script type="text/javascript" src="./node_modules/fullpage.js/vendors/scrolloverflow.min.js"></script>
+      <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.js"></script>
+      <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.min.js"></script>
    </head>
    <body>
       <!-- START NAVBAR -->
       <div class="main-navbar">
-         <div class="nav-text font-1">  <span class="blue-text">L</span>ebanese Immigrants and Refugees</div>
+         <div class="nav-text font-1"> The Lebanese <span class="blue-text">D</span>iaspora and the <span class="blue-text">R</span>efugees in Lebanon</div>
          <div class="nav-options">
             <div class="one-option selected">
                <div class="small-square blue"></div>
-               <a href="#"class="nav-link">Home</a>
+               <a href="#" class="nav-link">Home</a>
             </div>
             <div class="one-option">
                <div class="small-square blue"></div>
-               <a href="#"class="nav-link">Lebanese Diaspora</a>
+               <a href="#" class="nav-link">Lebanese Diaspora</a>
             </div>
             <div class="one-option">
                <div class="small-square blue"></div>
-               <a href="imm"class="nav-link">Lebanese Refugees</a>
+               <a href="#" class="nav-link">Refugees in Lebanon</a>
             </div>
          </div>
       </div>
-      <!-- END NAVBAR -->
-      <div class="lebanon-map">
-         <div
-            data-aos="fade-up"
-            data-aos-duration="700"
-            class="lebanon-map-text font-fancy">
-            <i class="fas fa-tree"></i>he story of the Lebanese diaspora
-            <div
-               data-aos="fade-up"
-               data-aos-delay="700"
-               data-aos-duration="800"
-               class="small-text-lebanon">
-               <br>
-               How many Lebanese families left their homes to live and succeed abroad.
-               <br>
-               And the tale of the many different refugees that sought asylum in Lebanon.
+      <div id="fullpage">
+         <!-- END NAVBAR -->
+         <div class="section ">
+            <div class="to-fix-section lebanon-map ">
+               <div
+                  class="lebanon-map-text font-fancy">
+                  <i class="fas fa-tree"></i>he story of the Lebanese diaspora
+                  <div
+                     class="small-text-lebanon">
+                     <br>
+                     How many Lebanese families left their homes to live and succeed abroad.
+                     <br>
+                     And the tale of the many different refugees that sought asylum in Lebanon.
+                  </div>
+               </div>
+               <div class="image-lebanon">
+                  <img src="./resources/lebanon-blue.png" alt="">
+               </div>
             </div>
          </div>
-         <div class="image-lebanon">
-            <img src="./resources/lebanon-blue.png" alt="">
-         </div>
-      </div>
-      <div
-         data-aos="fade-up"
-         class="section">
-         <div
-            class="middle-title font-fancy">
-            The reasons behind the waves of immigration
-         </div>
-         <div class="bisection">
-            <div 
-            data-aos="fade-up"
-            class="subsection">
-               Emigration has loomed over Lebanon for centuries up till this very day.
-               <br>    
-               One of the many reasons that cause such great waves of immigrations are wars and instability of the country.
-               The global peace index can reveal the fragile sense of security the Lebanese have.
-               According to <a class="in-text-link" href="https://countryeconomy.com/demography/global-peace-index/lebanon"> countryeconomy.com</a>, Lebanon ranked 146 out of 163 countries in the global peace index for the year 2020 . Additionally, it consistently ranks in the fourth quartile across all the recorded years.
+         <div class="section">
+            <div class="very-big font-fancy">
+               <div>
+                  Why did the Lebanese emigrate?  
+               </div>
             </div>
-            <div class="subsection">
+         </div>
+         <div class="section hai">
+            <div class="to-fix-section">
+               <div class="middle-title font-fancy">
+                  Unstability and Insecurity
+               </div>
+               One factor that pushes the Lebanese to immigrate is the fragile economy.
+               <br>
                <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a line plot showing the different GPI and GPR values for Lebanon across the years</span>
-               <div style="width: 70%; margin: auto;" class="chart"></div>
+               <div style="width: 100%; margin: auto;" class="chart"></div>
                <script type="module">
                   import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
                   import define from "https://api.observablehq.com/@mgermanos/data-visualization-final-project.js?v=3";
@@ -83,110 +86,156 @@
                     if (name === "chart") return Inspector.into(".chart")();
                   });
                </script>
-               <span style="font-size: 0.7rem;">*GPR: Global Peace ranking: shows the rank of lebanon between 163 countries. The smaller rank the better.
-               <br>
-               *GPI: GLobal Peace Index: measures three indices the ‘ongoing conflict’, ‘safety and security’, and ‘militarisation’. This scale ranges from 1 to 5 with 5 indicating a safe country. 
-               </span>
-            </div>
-            <div 
-            data-aos="fade-up"
-            class="subsection">
-               Although there were many periods of prosperity in Lebanon, the Lebanese economy is quick to collapse if any disturbance occurs in the region.
-               The GDP per capita measured by <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=LB" class="in-text-link">the World Bank</a> shows the feeble Lebanese economy.
-            </div>
-            <div class="subsection">
-               <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a line plot showing the GDP per capital growth (annual %)</span>
-               <div style="width: 100%; margin: auto;" class="chart2"></div>
-               <script type="module">
-                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                  import define from "https://api.observablehq.com/@mgermanos/data-visualization-final-project-part-2/2.js?v=3";
-                  (new Runtime).module(define, name => {
-                  if (name === "chart2") return Inspector.into(".chart2")();
-                  });
-               </script>
+               <div style="font-size: 0.7em">
+                  *GPR: Global Peace ranking: shows the rank of lebanon between 163 countries. The smaller rank the better.
+                  <br>
+                  *GPI: GLobal Peace Index: measures three indices the ‘ongoing conflict’, ‘safety and security’, and ‘militarisation’. This scale ranges from 1 to 5 with 5 indicating a safe country. 
+                  <br> 
+                  Data retrieved from<a class="in-text-link" href="https://countryeconomy.com/demography/global-peace-index/lebanon"> countryeconomy.com</a>
+               </div>
             </div>
          </div>
-      </div>
-      </div>
-      <div
-         data-aos="fade-up"
-         class="section">
-         <div class="middle-title font-fancy">
-            The impact this has on Lebanon 
-         </div>
-         <div class="bisection">
-            <div 
-            class="subsection">
-               <div  class="bubbles"></div>
-               <script type="module">
-                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                  import define from "https://api.observablehq.com/@mgermanos/bubble-chart-gdp-by-country.js?v=3";
-                  (new Runtime).module(define, name => {
-                    if (name === "bubbles") return Inspector.into(".bubbles")();
-                  });
-               </script>
-               <span style="font-size: 0.7rem; display: block;text-align:center;">The total number of lebanese immigrants in each year according to <a class="in-text-link"  href="google.com">this research</a></span>
+         <div class=" section">
+            <div class="to-fix-section">
+               <div class="middle-title font-fancy">
+                  Fragile Economy
+               </div>
+               <div  class="subsection">
+                  The Lebanese economy is quick to collapse if any disturbance occurs in the region.
+               </div>
+               <div class="subsection">
+                  <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a line plot showing the GDP per capital growth (annual %)</span>
+                  <div style="width: 100%; margin: auto;" class="chart2"></div>
+                  <script type="module">
+                     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                     import define from "https://api.observablehq.com/@mgermanos/data-visualization-final-project-part-2/2.js?v=3";
+                     (new Runtime).module(define, name => {
+                     if (name === "chart2") return Inspector.into(".chart2")();
+                     });
+                  </script>
+                  <span style="font-size: 0.7rem;">
+                  *GDP: Gross Domestic Product: a monetary measure of the market value of all the final goods and services produced in a specific time period.
+                  <br>
+                  Here we show the % change per capita across the years.
+                  <br>
+                  Data retrieved from <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=LB" class="in-text-link">the World Bank</a>.
+                  </span>
+               </div>
             </div>
-            <div style="height: fit-content;margin: auto;" class="subsection">
-               With each individual that left Lebanon, the country lost a valuable member of its society.
-               Many of these immigrants suceeded in their profession out there, and
-               some of them preserved and passed on their heritage to their children. However, others have lost this kinship.
-               It is time to shed light on the Lebanese diaspora, and help reconnect all of these immigrants to their home country.
+         </div>
+         <div class="section">
+            <div class="very-big font-fancy">
+               <div>
+                  The impact on Lebanon
+               </div>
             </div>
          </div>
-      </div>
-      <div
-      data-aos="fade-up"
-       class="big-section">
          <div
-          class="middle-title font-fancy">
-            Meet the Lebanese diaspora
-         </div>
-         Every time you visit this page, we will show you people that suceeded in their field in different countries. All of these people have Lebanese origins.
-         Now, we are viewing the country of:
-         <div id="remove_here" class="random_country"></div>
-         <div class="a"></div>
-         <script type="module">
-            import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-            import define from "https://api.observablehq.com/@mgermanos/notable-people-of-lebanese-descent.js?v=3";
-            (new Runtime).module(define, name => {
-              if (name === "random_country") return Inspector.into(".random_country")();
-              if (name === "a") return Inspector.into(".a")();
-              return ["drawChart","b"].includes(name) || null;
-            });
-         </script>
-      </div>
-      <div class="big-section">
-         <div style="border-color: #38b000;"
-         data-aos="fade-up"
-          class="middle-title font-fancy">
-            The refugees of Lebanon
-         </div>
-         <div class="bisection">
-            <div class="section">
-               Even with all the instability in Lebanon, many people fleed war and famine in their counrty and seeked refuge in Lebanon. 
-               In fact, Lebanon welcomed so many refugees that the UNRWA declared it the country hosting the largest number of refugees per capita.
-            </div>
-            <div class="section">
-               <div class="chart_bar"></div>
-            <script type="module">
-            import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-            import define from "https://api.observablehq.com/@mgermanos/bar-chart.js?v=3";
-            (new Runtime).module(define, name => {
-            if (name === "chart_bar") return Inspector.into(".chart_bar")();
-            });
-            </script>
+            class="section">
+            <div class="to-fix-section">
+               <div class="middle-title font-fancy">
+                  Loss of its people
+               </div>
+               <div style="display: grid; grid-template-columns: 2fr 1fr;">
+                  <div style="text-align: center   ;" >
+                     <div  class="bubbles"></div>
+                     <script type="module">
+                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                        import define from "https://api.observablehq.com/@mgermanos/bubble-chart-gdp-by-country.js?v=3";
+                        (new Runtime).module(define, name => {
+                          if (name === "bubbles") return Inspector.into(".bubbles")();
+                        });
+                     </script>
+                  </div>
+                  <div
+                     style="display: flex;
+                     flex-direction: column;
+                     justify-content: space-around;">
+                     <div>         
+                        With every person that left Lebanon, the country lost a valuable member of its society
+                        <br>
+                        Now the Lebanese are spread across the Globe.
+                     </div>
+                     <div>
+                        <i style="color: lightskyblue;" class="fas fa-angle-double-left"></i> The bubble graph to the left shows distribution of the Lebanese diaspora for the year 2016 according to <a class="in-text-link"  href="google.com">this research</a>
+                        <br>
+                     </div>
+                     <div>
+                        <a  class="in-text-link" href=""> <i style="color: lightskyblue;" class="fas fa-angle-double-right"></i>  Click here </a> to view this distribution on a map.
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
-      </div>
-      <div class="main-footer">
-         <div class="copyright">
-            This website was developed by Celine Fadel and Manuella Germanos for Dr. Eileen-Marie Hanna
+         <div class=" section">
+            <div class="to-fix-section">
+               <div class="middle-title font-fancy">
+                  Meet the Talented Lebanese diaspora
+               </div>
+               Lebanon also lost potential scientists, medical doctors, lawyers and many other successful people to immigration.
+               <br>
+               To shed light on International Lebanese success, we will show you people that suceeded in their field in different countries. All of these people have Lebanese origins.
+               Now, we are viewing the country of:
+               <div id="remove_here" class="random_country"></div>
+               <div class="a"></div>
+               <script type="module">
+                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                  import define from "https://api.observablehq.com/@mgermanos/notable-people-of-lebanese-descent.js?v=3";
+                  (new Runtime).module(define, name => {
+                    if (name === "random_country") return Inspector.into(".random_country")();
+                    if (name === "a") return Inspector.into(".a")();
+                    return ["drawChart","b"].includes(name) || null;
+                  });
+               </script>
+            </div>
+         </div>
+         <div class="section">
+            <div class="very-big font-fancy">
+               <div>
+                  How about refugees in Lebanon?
+               </div>
+            </div>
+         </div>
+         <div class="section">
+            <div class="to-fix-section">
+               <div style="border-color: #38b000;" class="middle-title font-fancy">
+                  The refugees of Lebanon
+               </div>
+               <div>
+                  Even with all the instability in Lebanon, many people fleed war and famine in their counrty and seeked refuge in Lebanon. 
+                  In fact, Lebanon welcomed so many refugees that the UNRWA declared it the country hosting the largest number of refugees per capita.
+               </div>
+               <div >
+                  <div class="chart_bar"></div>
+                  <script type="module">
+                     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                     import define from "https://api.observablehq.com/@mgermanos/bar-chart.js?v=3";
+                     (new Runtime).module(define, name => {
+                     if (name === "chart_bar") return Inspector.into(".chart_bar")();
+                     });
+                  </script>
+               </div>
+               <div class="main-footer">
+                  <div class="copyright">
+                     This website was developed by Celine Fadel and Manuella Germanos for Dr. Eileen-Marie Hanna
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
       <!-- Scripts -->
       <script>
          AOS.init();
+         new fullpage('#fullpage', {
+                  //options here
+                  autoScrolling:true,
+                  scrollHorizontally: true,
+                  navigation: true,
+                  navigationPosition: 'right',
+               });
+         
+         //methods
+         fullpage_api.setAllowScrolling(true);
       </script>
    </body>
 </html>

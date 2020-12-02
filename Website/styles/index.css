@@ -4,9 +4,8 @@
     padding: 5vw 0;
 }
 .lebanon-map .lebanon-map-text{
-    width: 50%;
+    max-width: 500px;
     position: absolute;
-    bottom: 15%;
     left: 5vw;
     font-size: 4.5rem;
 }
@@ -25,12 +24,18 @@
 #remove_here .observablehq--cellname{
     display: none;
 }
-.big-section{
-    margin: 20px 5vw;
-    font-size: 1.2rem;
-}
+
 .bubbles .observablehq{
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 60vh;
+}
+.bubbles svg{
+    height: 100%;
+    width: 100%;
+}
+
+.fp-tableCell{
+    vertical-align: unset !important;
 }
