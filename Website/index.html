@@ -78,13 +78,13 @@
                One factor that pushes the Lebanese to immigrate is the fragile economy.
                <br>
                <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a line plot showing the different GPI and GPR values for Lebanon across the years</span>
-               <div style="width: 100%; margin: auto;" class="chart"></div>
+               <div class="chart_bar"></div>
                <script type="module">
-                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                  import define from "https://api.observablehq.com/@mgermanos/data-visualization-final-project.js?v=3";
-                  (new Runtime).module(define, name => {
-                    if (name === "chart") return Inspector.into(".chart")();
-                  });
+               import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+               import define from "https://api.observablehq.com/@mgermanos/bar-chart.js?v=3";
+               (new Runtime).module(define, name => {
+               if (name === "chart_bar") return Inspector.into(".chart_bar")();
+               });
                </script>
                <div style="font-size: 0.7em">
                   *GPR: Global Peace ranking: shows the rank of lebanon between 163 countries. The smaller rank the better.
@@ -205,15 +205,14 @@
                   Even with all the instability in Lebanon, many people fleed war and famine in their counrty and seeked refuge in Lebanon. 
                   In fact, Lebanon welcomed so many refugees that the UNRWA declared it the country hosting the largest number of refugees per capita.
                </div>
-               <div >
-                  <div class="chart_bar"></div>
-                  <script type="module">
-                     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                     import define from "https://api.observablehq.com/@mgermanos/bar-chart.js?v=3";
-                     (new Runtime).module(define, name => {
-                     if (name === "chart_bar") return Inspector.into(".chart_bar")();
-                     });
-                  </script>
+               <div ><div class="chart"></div>               
+               <script type="module">
+               import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+               import define from "https://api.observablehq.com/@mgermanos/refugees-count.js?v=3";
+               (new Runtime).module(define, name => {
+                 if (name === "chart") return Inspector.into(".chart")();
+               });
+               </script>
                </div>
                <div class="main-footer">
                   <div class="copyright">
