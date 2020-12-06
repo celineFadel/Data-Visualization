@@ -42,7 +42,7 @@
             </div>
             <div class="one-option selected">
                <div class="small-square blue "></div>
-               <a href="#" class="nav-link">Lebanese Diaspora</a>
+               <a href="#" class="nav-link">Refugees in Lebanon</a>
             </div>
          </div>
       </div>
@@ -53,16 +53,15 @@
          <div style="
          display: flex;
          justify-content: center;" class="a"></div>
-
-         <script type="module">
-         import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-         import define from "https://api.observablehq.com/@mgermanos/lebanese-immigration-throughout-the-years.js?v=3";
-         (new Runtime).module(define, name => {
-         if (name === "viewof year") return Inspector.into(".viewof-year")();
-         if (name === "chart") return Inspector.into(".chart")();
-         if (name === "a") return Inspector.into(".a")();
-         });
-         </script>
+            <script type="module">
+            import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+            import define from "https://api.observablehq.com/@mgermanos/refugees-in-lebanon-throughout-the-years.js?v=3";
+            (new Runtime).module(define, name => {
+            if (name === "viewof year") return Inspector.into(".viewof-year")();
+            if (name === "chart") return Inspector.into(".chart")();
+            if (name === "a") return Inspector.into(".a")();
+            });
+            </script>
         </div>
    </body>
 </html>
