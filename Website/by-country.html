@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS -->
+      <link rel="stylesheet" href="styles/styles.css">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&family=Nerko+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+      <!-- Font awesome -->
+      <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+      <title>Lebanese Immigration</title>
+      <!-- Full scroll story -->
+      <link rel="stylesheet" type="text/css" href="./node_modules/fullpage.js/dist/fullpage.css" />
+      <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
+      <script src="./node_modules/fullpage.js/vendors/easings.min.js"></script> 
+      <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+      <script type="text/javascript" src="./node_modules/fullpage.js/vendors/scrolloverflow.min.js"></script>
+      <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.js"></script>
+      <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.min.js"></script>
+      <style>
+          .makesmolsvg svg,.makesmolsvg .observablehq{
+              height: 40vw;
+              width: 40vw;
+          }
+          .scalesvg svg{
+              height: 65vh;
+          }
+          .fp-tableCell{
+             vertical-align: unset !important;
+          }
+
+      </style>
+   </head>
+   <body>
+      <!-- START NAVBAR -->
+      <div class="main-navbar">
+         <div class="nav-text font-1"> The Lebanese <span class="blue-text">D</span>iaspora and the <span class="red-text">R</span>efugees in Lebanon</div>
+         <div class="nav-options">
+            <div class="one-option ">
+               <div class="small-square blue"></div>
+               <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="one-option selected">
+               <div class="small-square blue "></div>
+               <a href="#" class="nav-link">Lebanese Diaspora</a>
+            </div>
+         </div>
+        </div>
+         <div  id="fullpage" >
+            <div class="section">
+                <div class="middle-title font-fancy">
+                   Select a country
+                </div>
+                
+                <i style="color: lightskyblue;" class="fas fa-mouse-pointer"></i> Select your country of interest.
+
+                <div class="viewof-selected_country"></div>
+                <div style="display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;">
+                <div class="makesmolsvg chart_donut"></div> 
+                <div> of the recorded Lebanese that migrated from 1980 till 2016 chose to live in this country.
+                These numbers are not completely accurate as some countries don't report the numbers of immigrants for some years.
+                <br>
+                <br>
+                <i style="color: lightskyblue;" class="fas fa-mouse"></i> Scroll to learn more
+            </div>
+            </div>
+        </div>
+            <div class="section">
+                <div class="middle-title font-fancy">
+                   The waves of immigration 
+                </div>
+                <span> <i style="color: lightskyblue;" class="fas fa-wave-square"></i> We see below the number of <b>recorded</b> Lebanese that migrated to this country across the years</span>
+            <div class="chart_line"></div>
+            </div>
+            <div class="section">
+                <div class="middle-title font-fancy">
+                   Notable People
+                </div>
+                <i style="color: lightskyblue;"  class="fas fa-users"></i> Below is a list of some successful people that are part of the Lebanese Diaspora
+            <br>
+            <br>
+                <i style="color: lightskyblue;" class="fas fa-mouse-pointer"></i> Sort in order of
+            <div class="viewof-sorting"></div>
+            <div class="scalesvg chart"></div>
+            </div>
+
+            <script type="module">
+            import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+            import define from "https://api.observablehq.com/@mgermanos/try-2-of-imp-people-according-to-country/2.js?v=3";
+            (new Runtime).module(define, name => {
+            if (name === "viewof selected_country") return Inspector.into(".viewof-selected_country")();
+            if (name === "chart_donut") return Inspector.into(".chart_donut")();
+            if (name === "chart_line") return Inspector.into(".chart_line")();
+            if (name === "viewof sorting") return Inspector.into(".viewof-sorting")();
+            if (name === "chart") return Inspector.into(".chart")();
+            return ["data","data_line","y","x","dataByTimeline","dataByRegion","dataByProfession","professions","progress","tecc","x_line","y_line","getRect","axisBottom","axisTop","timelines","color","data_bar","Tooltip","line","xAxis","yAxis","arcs"].includes(name) || null;
+            });
+            </script>
+         </div>
+         <script>
+            new fullpage('#fullpage', {
+                     //options here
+                     autoScrolling:true,
+                     scrollHorizontally: true,
+                     navigation: true,
+                     navigationPosition: 'right',
+                  });
+            
+            //methods
+            fullpage_api.setAllowScrolling(true);
+         </script>
+         
+   </body>
+</html>

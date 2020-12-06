@@ -7,7 +7,7 @@
     --main-border-color: #E6EAEA;
     --main-light-blue-color: lightskyblue;
     --main-blue:#0096C7;
-    --main-green:#38b000;
+    --main-red:#E85D04;
 }
 body, html{
   padding: 0;
@@ -86,6 +86,9 @@ body{
 }
 .main-navbar .nav-text .blue-text{
   color: var(--main-blue);
+}
+.main-navbar .nav-text .red-text{
+  color: var(--main-red);
 }
 .small-square{
   height: 7px;

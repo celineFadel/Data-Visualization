@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS -->
+      <link rel="stylesheet" href="styles/styles.css">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&family=Nerko+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+      <!-- Font awesome -->
+      <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+      <title>Lebanese Immigration</title>
+      <!-- Full scroll story -->
+      <link rel="stylesheet" type="text/css" href="./node_modules/fullpage.js/dist/fullpage.css" />
+      <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
+      <script src="./node_modules/fullpage.js/vendors/easings.min.js"></script> 
+      <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+      <script type="text/javascript" src="./node_modules/fullpage.js/vendors/scrolloverflow.min.js"></script>
+      <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.js"></script>
+      <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.min.js"></script>
+      <style>
+          .makesmolsvg svg{
+              height: 80vh;
+
+          }
+          .makesmolsvg .observablehq{
+              display: flex;
+              justify-content: center;
+          }
+
+      </style>
+   </head>
+   <body>
+      <!-- START NAVBAR -->
+      <div class="main-navbar">
+         <div class="nav-text font-1"> The Lebanese <span class="blue-text">D</span>iaspora and the <span class="red-text">R</span>efugees in Lebanon</div>
+         <div class="nav-options">
+            <div class="one-option ">
+               <div class="small-square blue"></div>
+               <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="one-option selected">
+               <div class="small-square blue "></div>
+               <a href="#" class="nav-link">Lebanese Diaspora</a>
+            </div>
+         </div>
+      </div>
+      <div>
+      <div style="margin-left:50px ;" class="viewof-year"></div>
+        <div class="chart makesmolsvg"></div>
+        
+        <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/a73fc72ba94c4489.js?v=3";
+        (new Runtime).module(define, name => {
+        if (name === "viewof year") return Inspector.into(".viewof-year")();
+        if (name === "chart") return Inspector.into(".chart")();
+        });
+        </script>
+        </div>
+   </body>
+</html>

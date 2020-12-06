@@ -5,9 +5,6 @@
       <!-- CSS -->
       <link rel="stylesheet" href="styles/styles.css">
       <link rel="stylesheet" href="styles/index.css">
-      <!-- Animation -->
-      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <!-- Fonts -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500&family=Nerko+One&display=swap" rel="stylesheet">
@@ -27,19 +24,11 @@
    <body>
       <!-- START NAVBAR -->
       <div class="main-navbar">
-         <div class="nav-text font-1"> The Lebanese <span class="blue-text">D</span>iaspora and the <span class="blue-text">R</span>efugees in Lebanon</div>
+         <div class="nav-text font-1"> The Lebanese <span class="blue-text">D</span>iaspora and the <span class="red-text">R</span>efugees in Lebanon</div>
          <div class="nav-options">
             <div class="one-option selected">
                <div class="small-square blue"></div>
                <a href="#" class="nav-link">Home</a>
-            </div>
-            <div class="one-option">
-               <div class="small-square blue"></div>
-               <a href="#" class="nav-link">Lebanese Diaspora</a>
-            </div>
-            <div class="one-option">
-               <div class="small-square blue"></div>
-               <a href="#" class="nav-link">Refugees in Lebanon</a>
             </div>
          </div>
       </div>
@@ -136,17 +125,20 @@
                <div class="middle-title font-fancy">
                   Loss of its people
                </div>
-               <div style="display: grid; grid-template-columns: 2fr 1fr;">
-                  <div style="text-align: center   ;" >
-                     <div  class="bubbles"></div>
-                     <script type="module">
-                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                        import define from "https://api.observablehq.com/@mgermanos/bubble-chart-gdp-by-country.js?v=3";
-                        (new Runtime).module(define, name => {
-                          if (name === "bubbles") return Inspector.into(".bubbles")();
-                        });
-                     </script>
+               <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                  <div>
+                     <div class="bubbles_2">
+                        <div style="font-size: 0.7em"></div>
+                     </div>
+                     <i style="color: lightskyblue;" class="fas fa-angle-double-up"></i>Above is a bubble chart showing the countries with most recorded lebanese immigration
                   </div>
+                     <script type="module">
+                     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                     import define from "https://api.observablehq.com/@mgermanos/bubble-chart-gdp-by-country.js?v=3";
+                     (new Runtime).module(define, name => {
+                     if (name === "bubbles_2") return Inspector.into(".bubbles_2")();
+                     });
+                     </script>
                   <div
                      style="display: flex;
                      flex-direction: column;
@@ -161,13 +153,31 @@
                         <br>
                      </div>
                      <div>
-                        <a  class="in-text-link" href=""> <i style="color: lightskyblue;" class="fas fa-angle-double-right"></i>  Click here </a> to view this distribution on a map.
+                        <a  class="in-text-link" href="immigrants-map.html"> <i style="color: lightskyblue;" class="fas fa-angle-double-right"></i>  Click here </a> to view this distribution on a map.
                      </div>
+                     <div>
+                        <a  class="in-text-link" href="by-country.html"> <i style="color: lightskyblue;" class="fas fa-angle-double-right"></i>  Click here </a> to view the information of a specific country.
+                     </div>
+                  </div>
+                  <div style="text-align: center ;" >
+                     <div>
+                        <div class="bubbles">
+                           <div style="font-size: 0.7em"></div>
+                        </div>
+                        Above is a bubble chart showing the distribution of Lebanese diaspora in the remaining countries
+                     </div>
+                        <script type="module">
+                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                        import define from "https://api.observablehq.com/@mgermanos/bubble-chart-lebanese-diaspora-in-big-country.js?v=3";
+                        (new Runtime).module(define, name => {
+                        if (name === "bubbles") return Inspector.into(".bubbles")();
+                        });
+                        </script>
                   </div>
                </div>
             </div>
          </div>
-         <div class=" section">
+         <div class="section">
             <div class="to-fix-section">
                <div class="middle-title font-fancy">
                   Meet the Talented Lebanese diaspora
@@ -198,7 +208,7 @@
          </div>
          <div class="section">
             <div class="to-fix-section">
-               <div style="border-color: #38b000;" class="middle-title font-fancy">
+               <div style="border-color: #E85D04;" class="middle-title font-fancy">
                   The refugees of Lebanon
                </div>
                <div>
@@ -214,17 +224,35 @@
                });
                </script>
                </div>
-               <div class="main-footer">
-                  <div class="copyright">
-                     This website was developed by Celine Fadel and Manuella Germanos for Dr. Eileen-Marie Hanna
-                  </div>
-               </div>
             </div>
+         </div>
+         <div class="section">
+            <div style="border-color: #E85D04;" class="middle-title font-fancy">
+               Refugees Exodus
+            </div>
+            <i style="color: #E85D04;" class="fas fa-angle-double-down"></i> We see below how the refugees came from different countries to Lebanon across the years.
+
+            <div class="viewof-replay"></div>
+                  <div class="race_chart"></div>
+
+                  <script type="module">
+                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+                  import define from "https://api.observablehq.com/@mgermanos/bar-chart-race.js?v=3";
+                  (new Runtime).module(define, name => {
+                  if (name === "viewof replay") return Inspector.into(".viewof-replay")();
+                  if (name === "race_chart") return Inspector.into(".race_chart")();
+                  });
+                  </script>
+
+            <!-- <div class="main-footer">
+               <div class="copyright">
+                  This website was developed by Celine Fadel and Manuella Germanos for Dr. Eileen-Marie Hanna
+               </div>
+            </div> -->
          </div>
       </div>
       <!-- Scripts -->
       <script>
-         AOS.init();
          new fullpage('#fullpage', {
                   //options here
                   autoScrolling:true,
