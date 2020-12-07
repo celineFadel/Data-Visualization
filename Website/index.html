@@ -12,6 +12,7 @@
       <!-- Font awesome -->
       <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
       <title>Home</title>
+      <link rel="icon" href="./resources/lebanon-blue.png">
       <!-- Full scroll story -->
       <link rel="stylesheet" type="text/css" href="./node_modules/fullpage.js/dist/fullpage.css" />
       <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
@@ -62,7 +63,7 @@
          <div class="section hai">
             <div class="to-fix-section">
                <div class="middle-title font-fancy">
-                  Unstability and Insecurity
+                  Instability and Insecurity
                </div>
                One factor that pushes the Lebanese to immigrate is the fragile economy.
                <br>
@@ -76,9 +77,9 @@
                });
                </script>
                <div style="font-size: 0.7em">
-                  *GPR: Global Peace ranking: shows the rank of lebanon between 163 countries. The smaller rank the better.
+                  *GPR: Global Peace ranking: shows the rank of lebanon among 163 countries. The smaller rank the better.
                   <br>
-                  *GPI: GLobal Peace Index: measures three indices the ‘ongoing conflict’, ‘safety and security’, and ‘militarisation’. This scale ranges from 1 to 5 with 5 indicating a safe country. 
+                  *GPI: GLobal Peace Index: measures three indices: ‘ongoing conflict’, ‘safety and security’, and ‘militarisation’. This scale ranges from 1 to 5 with 5 indicating a safe country. 
                   <br> 
                   Data retrieved from<a class="in-text-link" href="https://countryeconomy.com/demography/global-peace-index/lebanon"> countryeconomy.com</a>
                </div>
@@ -90,7 +91,7 @@
                   Fragile Economy
                </div>
                <div  class="subsection">
-                  The Lebanese economy is quick to collapse if any disturbance occurs in the region.
+                  The Lebanese also consider immigration due to the weak economy that is quick to collapse if any disturbance occurs in the region.
                </div>
                <div class="subsection">
                   <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a line plot showing the GDP per capital growth (annual %)</span>
@@ -125,12 +126,14 @@
                <div class="middle-title font-fancy">
                   Loss of its people
                </div>
-               <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+               <div style="display: grid; grid-template-columns: 1fr 1fr;">
                   <div>
                      <div class="bubbles_2">
                         <div style="font-size: 0.7em"></div>
                      </div>
-                     <i style="color: lightskyblue;" class="fas fa-angle-double-up"></i> Above is a bubble chart showing the countries with most recorded lebanese immigration
+                     <div style="padding-right: 50px;">
+                     <i style="color: lightskyblue;" class="far fa-circle"></i> The bubble graph shows the countries with most Lebanese immigrants according to <a class="in-text-link"  href="https://www.un.org/en/development/desa/population/migration/data/empirical2/migrationflows.asp">the UN</a>
+                  </div>
                   </div>
                      <script type="module">
                      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
@@ -146,33 +149,14 @@
                      <div>         
                         With every person that left Lebanon, the country lost a valuable member of its society
                         <br>
-                        Now the Lebanese are spread across the Globe.
+                        These people chose to settle in different countries around the globe.
                      </div>
                      <div>
-                        <i style="color: lightskyblue;" class="fas fa-angle-double-left"></i> The bubble graph to the left shows distribution of the Lebanese diaspora for the year 2016 according to <a class="in-text-link"  href="google.com">this research</a>
-                        <br>
+                        <a  class="in-text-link" href="immigrants-map.html"> <i style="color: lightskyblue;" class="fas fa-globe"></i>  Click here </a> to view the distribution of the diaspora on a map.
                      </div>
                      <div>
-                        <a  class="in-text-link" href="immigrants-map.html"> <i style="color: lightskyblue;" class="fas fa-angle-double-right"></i>  Click here </a> to view this distribution on a map.
+                        <a  class="in-text-link" href="by-country.html"> <i style="color: lightskyblue;" class="fas fa-map-marker-alt"></i>  Click here </a> view the information of a country of interest.
                      </div>
-                     <div>
-                        <a  class="in-text-link" href="by-country.html"> <i style="color: lightskyblue;" class="fas fa-angle-double-right"></i>  Click here </a> to view the information of a specific country.
-                     </div>
-                  </div>
-                  <div style="text-align: center ;" >
-                     <div>
-                        <div class="bubbles">
-                           <div style="font-size: 0.7em"></div>
-                        </div>
-                        <i style="color: lightskyblue;" class="fas fa-angle-double-up"></i>  Above is a bubble chart showing the distribution of Lebanese diaspora in the remaining countries
-                     </div>
-                        <script type="module">
-                        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                        import define from "https://api.observablehq.com/@mgermanos/bubble-chart-lebanese-diaspora-in-big-country.js?v=3";
-                        (new Runtime).module(define, name => {
-                        if (name === "bubbles") return Inspector.into(".bubbles")();
-                        });
-                        </script>
                   </div>
                </div>
             </div>
@@ -180,12 +164,11 @@
          <div class="section">
             <div class="to-fix-section">
                <div class="middle-title font-fancy">
-                  Meet the Talented Lebanese diaspora
+                  Meet the talented Lebanese diaspora
                </div>
                Lebanon also lost potential scientists, medical doctors, lawyers and many other successful people to immigration.
                <br>
-               To shed light on International Lebanese success, we will show you people that suceeded in their field in different countries. All of these people have Lebanese origins.
-               Now, we are viewing the country of:
+               To shed light on International Lebanese accpmplishments, we list below some of the successful people of Lebanese origin in
                <div id="remove_here" class="random_country"></div>
                <div class="a"></div>
                <script type="module">
@@ -212,8 +195,9 @@
                   The refugees of Lebanon
                </div>
                <div>
-                  Even with all the instability in Lebanon, many people fleed war and famine in their counrty and seeked refuge in Lebanon. 
+                  Even with the instability in Lebanon, many people fled war and famine in their counrty and seeked refuge in Lebanon. 
                   In fact, Lebanon welcomed so many refugees that the UNRWA declared it the country hosting the largest number of refugees per capita.
+                  We see below a line plot showing the number of refugees living in Lebanon across the years accroding to <a class="in-text-link" href="https://data.un.org/Search.aspx?q=refugees+in+lebanon">the UN</a>.
                </div>
                <div ><div class="chart"></div>               
                <script type="module">
@@ -230,11 +214,11 @@
             <div style="border-color: #E85D04;" class="middle-title font-fancy">
                Refugees Exodus
             </div>
-            <i style="color: #E85D04;" class="fas fa-angle-double-down"></i> We see below how the refugees came from different countries to Lebanon across the years.
+            <i style="color: #E85D04;" class="fas fa-angle-double-down"></i> We see below how the refugees came from different countries to Lebanon across the years, and the explosion in the numbers of refugees in the recent years.
 
             <div class="viewof-replay"></div>
                   <div class="race_chart"></div>
-                  <a  class="in-text-link" href="refugees-map.html"> <i style="color: #E85D04;" class="fas fa-angle-double-right"></i>  Click here </a> to view the information on a map.
+                  <a  class="in-text-link" href="refugees-map.html"> <i style="color: #E85D04;" class="fas fa-globe"></i>  Click here </a> to view this distribution on a map.
                   <script type="module">
                   import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
                   import define from "https://api.observablehq.com/@mgermanos/bar-chart-race.js?v=3";
