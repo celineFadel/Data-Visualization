@@ -21,6 +21,7 @@
       <script type="text/javascript" src="./node_modules/fullpage.js/vendors/scrolloverflow.min.js"></script>
       <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.js"></script>
       <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.min.js"></script>
+
    </head>
    <body>
       <!-- START NAVBAR -->
@@ -69,13 +70,6 @@
                <br>
                <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a bar chart showing the different GPI and GPR values for Lebanon across the years</span>
                <div class="chart_bar"></div>
-               <script type="module">
-               import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-               import define from "https://api.observablehq.com/@mgermanos/bar-chart.js?v=3";
-               (new Runtime).module(define, name => {
-               if (name === "chart_bar") return Inspector.into(".chart_bar")();
-               });
-               </script>
                <div style="font-size: 0.7em">
                   *GPR: Global Peace ranking: shows the rank of lebanon among 163 countries. The smaller rank the better.
                   <br>
@@ -95,14 +89,9 @@
                </div>
                <div class="subsection">
                   <span> <i style="color: lightskyblue;" class="fas fa-angle-double-down"></i> Below is a line plot showing the GDP per capital growth (annual %)</span>
-                  <div style="width: 100%; margin: auto;" class="chart2"></div>
-                  <script type="module">
-                     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                     import define from "https://api.observablehq.com/@mgermanos/data-visualization-final-project-part-2/2.js?v=3";
-                     (new Runtime).module(define, name => {
-                     if (name === "chart2") return Inspector.into(".chart2")();
-                     });
-                  </script>
+                  <div style="width: 100%; margin: auto;" class="gdp_chart"></div>
+                 
+                  <div class="gdp_chart"></div>
                   <span style="font-size: 0.7rem;">
                   *GDP: Gross Domestic Product: a monetary measure of the market value of all the final goods and services produced in a specific time period.
                   <br>
@@ -128,20 +117,11 @@
                </div>
                <div style="display: grid; grid-template-columns: 1fr 1fr;">
                   <div>
-                     <div class="bubbles_2">
-                        <div style="font-size: 0.7em"></div>
-                     </div>
+                     <div class="bubble_chart"></div>
                      <div style="padding-right: 50px;">
-                     <i style="color: lightskyblue;" class="far fa-circle"></i> The bubble graph shows the countries with most Lebanese immigrants according to <a class="in-text-link"  href="https://www.un.org/en/development/desa/population/migration/data/empirical2/migrationflows.asp">the UN</a>
+                     <i style="color: lightskyblue;" class="fas fa-angle-double-up"></i> The bubble graph shows the countries with most Lebanese immigrants according to <a class="in-text-link"  href="https://www.un.org/en/development/desa/population/migration/data/empirical2/migrationflows.asp">the UN</a>
                   </div>
                   </div>
-                     <script type="module">
-                     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                     import define from "https://api.observablehq.com/@mgermanos/bubble-chart-gdp-by-country.js?v=3";
-                     (new Runtime).module(define, name => {
-                     if (name === "bubbles_2") return Inspector.into(".bubbles_2")();
-                     });
-                     </script>
                   <div
                      style="display: flex;
                      flex-direction: column;
@@ -166,20 +146,13 @@
                <div class="middle-title font-fancy">
                   Meet the talented Lebanese diaspora
                </div>
-               Lebanon also lost potential scientists, medical doctors, lawyers and many other successful people to immigration.
+               <div class="selected_country_network_html makeinline">
+                  Lebanon also lost potential scientists, medical doctors, lawyers and many other successful people to immigration.
+                  <br>
+                  To shed light on International Lebanese accpmplishments, we list below some of the successful people of Lebanese origin in </div>
                <br>
-               To shed light on International Lebanese accpmplishments, we list below some of the successful people of Lebanese origin in
-               <div id="remove_here" class="random_country"></div>
-               <div class="a"></div>
-               <script type="module">
-                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                  import define from "https://api.observablehq.com/@mgermanos/notable-people-of-lebanese-descent.js?v=3";
-                  (new Runtime).module(define, name => {
-                    if (name === "random_country") return Inspector.into(".random_country")();
-                    if (name === "a") return Inspector.into(".a")();
-                    return ["drawChart","b"].includes(name) || null;
-                  });
-               </script>
+                  <div class="network_chart"></div>
+               
             </div>
          </div>
          <div class="section">
@@ -199,14 +172,8 @@
                   In fact, Lebanon welcomed so many refugees that the UNRWA declared it the country hosting the largest number of refugees per capita.
                   We see below a line plot showing the number of refugees living in Lebanon across the years accroding to <a class="in-text-link" href="https://data.un.org/Search.aspx?q=refugees+in+lebanon">the UN</a>.
                </div>
-               <div ><div class="chart"></div>               
-               <script type="module">
-               import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-               import define from "https://api.observablehq.com/@mgermanos/refugees-count.js?v=3";
-               (new Runtime).module(define, name => {
-                 if (name === "chart") return Inspector.into(".chart")();
-               });
-               </script>
+               <div >
+                  <div class="refugee_count_chart"></div>
                </div>
             </div>
          </div>
@@ -217,16 +184,24 @@
             <i style="color: #E85D04;" class="fas fa-angle-double-down"></i> We see below how the refugees came from different countries to Lebanon across the years, and the explosion in the numbers of refugees in the recent years.
 
             <div class="viewof-replay"></div>
-                  <div class="race_chart"></div>
-                  <a  class="in-text-link" href="refugees-map.html"> <i style="color: #E85D04;" class="fas fa-globe"></i>  Click here </a> to view this distribution on a map.
-                  <script type="module">
-                  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-                  import define from "https://api.observablehq.com/@mgermanos/bar-chart-race.js?v=3";
-                  (new Runtime).module(define, name => {
-                  if (name === "viewof replay") return Inspector.into(".viewof-replay")();
-                  if (name === "race_chart") return Inspector.into(".race_chart")();
-                  });
-                  </script>
+            <div class="race_chart"></div>
+            <a  class="in-text-link" href="refugees-map.html"> <i style="color: #E85D04;" class="fas fa-globe"></i>  Click here </a> to view this distribution on a map.
+
+
+            <script type="module">
+            import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+            import define from "https://api.observablehq.com/@mgermanos/data-visualization-final-project-main.js?v=3";
+            (new Runtime).module(define, name => {
+            if (name === "chart_bar") return Inspector.into(".chart_bar")();
+            if (name === "gdp_chart") return Inspector.into(".gdp_chart")();
+            if (name === "bubble_chart") return Inspector.into(".bubble_chart")();
+            if (name === "selected_country_network_html") return Inspector.into(".selected_country_network_html")();
+            if (name === "network_chart") return Inspector.into(".network_chart")();
+            if (name === "refugee_count_chart") return Inspector.into(".refugee_count_chart")();
+            if (name === "viewof replay") return Inspector.into(".viewof-replay")();
+            if (name === "race_chart") return Inspector.into(".race_chart")();
+            });
+            </script>
 
             <!-- <div class="main-footer">
                <div class="copyright">

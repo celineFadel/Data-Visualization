@@ -21,9 +21,7 @@
 .lebanon-map .image-lebanon img{
     height: 100%;
 }
-#remove_here .observablehq--cellname{
-    display: none;
-}
+
 
 .bubbles .observablehq{
     display: flex;
@@ -38,4 +36,7 @@
 
 .fp-tableCell{
     vertical-align: unset !important;
+}
+.makeinline .observablehq{
+    display: inline;
 }
