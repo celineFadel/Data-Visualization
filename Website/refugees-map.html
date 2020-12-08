@@ -48,19 +48,20 @@
          </div>
       </div>
       <div>
-      <div style="margin-left:50px ;" class="viewof-year"></div>
-        <div class="chart makesmolsvg"></div>
-        <div class="viewof-year"></div>
-         <div style="
-         display: flex;
-         justify-content: center;" class="a"></div>
+      <div style="margin-left:50px ;"  class="viewof-year"></div>
+            <div class="makesmolsvg chart"></div>
+            <div style="
+            display: flex;
+            justify-content: center;"
+            class="legend_view"></div>
+            
             <script type="module">
             import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-            import define from "https://api.observablehq.com/@mgermanos/refugees-in-lebanon-throughout-the-years.js?v=3";
+            import define from "https://api.observablehq.com/@celinefadel/refugees-in-lebanon-throughout-the-years-cumulative.js?v=3";
             (new Runtime).module(define, name => {
-            if (name === "viewof year") return Inspector.into(".viewof-year")();
-            if (name === "chart") return Inspector.into(".chart")();
-            if (name === "a") return Inspector.into(".a")();
+              if (name === "viewof year") return Inspector.into(".viewof-year")();
+              if (name === "chart") return Inspector.into(".chart")();
+              if (name === "legend_view") return Inspector.into(".legend_view")();
             });
             </script>
         </div>
